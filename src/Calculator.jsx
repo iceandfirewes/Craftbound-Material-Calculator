@@ -1,8 +1,9 @@
-import  {crafts, craftSearch} from "./assets/Crafts.js"
+import  {crafts, craftSearch, searchRawMaterials} from "./assets/Crafts.js"
 import { useState } from "react"
 export default function Calculator()
 {
-    const [craftOption, setcraftOption] = useState({name:"light leather", amount:1})
+    //console.log(testRecursiveCraftBlueprint("leatherworking","coarse leather boots",false))
+    const [craftOption, setcraftOption] = useState({type:"leatherworking", name:"coarse leather", amount:1})
     function handleOptionChange(event)
     {
         setcraftOption(oldCraftOption => {
@@ -16,32 +17,33 @@ export default function Calculator()
         <div className="calculator--option">
             <input name="amount" className="option--amount" type="text" value={craftOption.amount} onChange={(event) => handleOptionChange(event)}></input>
             <select name="name" onChange={(event) => handleOptionChange(event)} value={craftOption.name}>
-                {/* probably better to put another dropdown to filter out non leather working */}
-                {crafts.map(craft => (craft.hasOwnProperty("requirements") ? <option value={craft.name}>{craft.name}</option> : undefined))}
+              {/* hard coded. need to add dropdown */}
+              {crafts["leatherworking"].map(craft => (craft.hasOwnProperty("requirements") ? <option value={craft.name}>{craft.name}</option> : undefined))}
             </select>
         </div>
-        {createCraftBlueprint(craftOption.name, craftOption.amount)}
+        {/*createCraftBlueprint(craftOption.name, craftOption.amount)*/}
+        {createCraftBluePrint(craftOption.type,craftOption.name, craftOption.amount, false)}
   </section>
 }
-function createCraftBlueprint(name, amount)
+function createCraftBluePrint(type, name, amount, rawFlag)
 {
-  let craft = craftSearch(name, amount)
-  if(!craft.hasOwnProperty('requirements'))
+  if(rawFlag)
   {
+    let rawMaterial = searchRawMaterials(type, name)
     return <div className="ingredients">
-    <span>{name}</span>
+    <span>{rawMaterial.name}</span>
     <span>x{amount}</span>
     <input type="checkbox"></input>
-  </div>
+    </div>
   }
-  else
-  {
-    const child = craft.requirements.map(requirement => createCraftBlueprint(requirement.name, amount * requirement.amount))
+  else{
+    let craft = craftSearch(type, name)
+    const child = craft.requirements.map(requirement => createCraftBluePrint(requirement.type, requirement.name, amount * requirement.amount, requirement.raw))
     return <div className='steps'>
-        <div className="ingredients">
-            <span>{name}</span>
-            <span>x{amount}</span>
-        </div>
+      <div className="ingredients">
+        <span>{name}</span>
+        <span>x{amount}</span>
+      </div>
       <div>{child}</div>
     </div>
   }
