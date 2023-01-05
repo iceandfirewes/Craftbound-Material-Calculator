@@ -17,7 +17,16 @@ const raw_materials = {
         {name: "limestone flux", rarity: ["common"]},
         {name: "silver ore", rarity: ["common"]},
         {name: "liquid flux", rarity: ["common"]},
-    ]
+    ],
+    tailoring:[
+        {name:"fiber", rarity: ["common"]},
+        {name:"cotton", rarity: ["common"]},
+        {name:"coarse thread", rarity: ["common"]},
+        {name:"hemp", rarity: ["common"]},
+        {name:"fine thread", rarity: ["common"]},
+        {name:"silkweed",rarity:["common"]},
+        {name:"silken thread",rarity:["common"]}
+    ],
 }
 export const crafts = {
     leatherworking:{
@@ -89,6 +98,52 @@ export const crafts = {
                 {type:"blacksmithing", tier: "IV", name: "liquid flux", amount:1, raw: true},
                 {type:"blacksmithing", tier: "III", name: "steel ingot", amount:1, raw: false}]}
         ],
+    },
+    tailoring:{
+        //TIER 1
+        I:[
+            {name:"linen cloth", requirements:[
+                {type:"tailoring", tier: "I", name: "fiber", amount:1, raw: true}]},
+            {name:"linen sash", requirements:[{type:"tailoring", tier: "I", name:"linen cloth", amount:3, raw: false}]},
+            {name:"linen gloves", requirements:[{type:"tailoring", tier: "I", name:"linen cloth", amount:3, raw: false}]},
+            {name:"linen bandana", requirements:[{type:"tailoring", tier: "I", name:"linen cloth", amount:4, raw: false}]},
+            {name:"linen shirt", requirements:[{type:"tailoring", tier: "I", name:"linen cloth", amount:5, raw: false}]},
+        ],
+        //TIER 2
+        II:[
+            {name:"wool cloth", requirements:[
+                {type:"tailoring", tier: "II", name: "cotton", amount:2, raw: true},
+                {type:"tailoring", tier: "II", name: "coarse thread", amount:1, raw: true}
+            ]},
+            {name:"wool sash", requirements:[{type:"tailoring", tier: "II", name:"wool cloth", amount:3, raw: false}]},
+            {name:"wool gloves", requirements:[{type:"tailoring", tier: "II", name:"wool cloth", amount:3, raw: false}]},
+            {name:"wool bandana", requirements:[{type:"tailoring", tier: "II", name:"wool cloth", amount:4, raw: false}]},
+            {name:"wool shirt", requirements:[{type:"tailoring", tier: "II", name:"wool cloth", amount:5, raw: false}]},
+        ],
+        //TIER 3
+        III:[
+            {name:"sateen", requirements:[
+                {type:"tailoring", tier: "III", name: "hemp", amount:3, raw: true},
+                {type:"tailoring", tier: "III", name: "fine thread", amount:1, raw: true},
+                {type:"tailoring", tier: "II", name: "wool cloth", amount:1, raw: false}
+            ]},
+            {name:"sateen sash", requirements:[{type:"tailoring", tier: "III", name:"sateen", amount:3, raw: false}]},
+            {name:"sateen gloves", requirements:[{type:"tailoring", tier: "III", name:"sateen", amount:3, raw: false}]},
+            {name:"sateen bandana", requirements:[{type:"tailoring", tier: "III", name:"sateen", amount:4, raw: false}]},
+            {name:"sateen shirt", requirements:[{type:"tailoring", tier: "III", name:"sateen", amount:5, raw: false}]},
+        ],
+        //TIER 4
+        IV:[
+            {name:"silk cloth", requirements:[
+                {type:"tailoring", tier: "IV", name: "silkweed", amount:4, raw: true},
+                {type:"tailoring", tier: "IV", name: "silken thread", amount:1, raw: true},
+                {type:"tailoring", tier: "III", name: "sateen", amount:1, raw: false}
+            ]},
+            {name:"silk sash", requirements:[{type:"tailoring", tier: "IV", name:"silk cloth", amount:3, raw: false}]},
+            {name:"silk gloves", requirements:[{type:"tailoring", tier: "IV", name:"silk cloth", amount:3, raw: false}]},
+            {name:"silk bandana", requirements:[{type:"tailoring", tier: "IV", name:"silk cloth", amount:4, raw: false}]},
+            {name:"silk shirt", requirements:[{type:"tailoring", tier: "IV", name:"silk cloth", amount:5, raw: false}]},
+        ]
     }
 }
 export function searchRawMaterials(type, name)
