@@ -57,37 +57,6 @@ export const crafts = {
         {name:"rugged leather apron", requirements:[{type:"leatherworking", name:"rugged leather", amount:5, raw: false}]},
     ]
 }
-// export const crafts = [
-//     //LEATHER WORKING
-//     {name:"coarse leather", requirements:[{name:"raw hide", amount:1, raw: true}]},
-//     {name:"coarse leather boots", requirements:[{name:"coarse leather", amount:3, raw: false}]},
-//     {name:"coarse leather belt", requirements:[{name:"coarse leather", amount:3, raw: false}]},
-//     {name:"coarse leather gloves", requirements:[{name:"coarse leather", amount:3, raw: false}]},
-//     {name:"coarse leather cap", requirements:[{name:"coarse leather", amount:4, raw: false}]},
-//     {name:"coarse leather apron", requirements:[{name:"coarse leather", amount:5, raw: false}]},
-
-//     {name:"light leather", requirements:[{name:"light hide", amount:2, raw: true},{name:"tannin", amount:1, raw: true}]},
-//     {name:"light leather boots", requirements:[{name:"light leather", amount:3, raw: false}]},
-//     {name:"light leather belt", requirements:[{name:"light leather", amount:3, raw: false}]},
-//     {name:"light leather gloves", requirements:[{name:"light leather", amount:3, raw: false}]},
-//     {name:"light leather cap", requirements:[{name:"light leather", amount:4, raw: false}]},
-//     {name:"light leather apron", requirements:[{name:"light leather", amount:5, raw: false}]},
-
-//     {name:"heavy leather", requirements:[{name:"heavy hide", amount:3, raw: true},{name:"rested tannin", amount:1, raw: true}, {name:"light leather", amount:1, raw: false}]},
-//     {name:"heavy leather boots", requirements:[{name:"heavy leather", amount:3, raw: false}]},
-//     {name:"heavy leather belt", requirements:[{name:"heavy leather", amount:3, raw: false}]},
-//     {name:"heavy leather gloves", requirements:[{name:"heavy leather", amount:3, raw: false}]},
-//     {name:"heavy leather cap", requirements:[{name:"heavy leather", amount:4, raw: false}]},
-//     {name:"heavy leather apron", requirements:[{name:"heavy leather", amount:5, raw: false}]},
-
-//     {name:"rugged leather", requirements:[{name:"rugged hide", amount:4, raw: true},{name:"aged tannin", amount:1, raw: true}, {name:"heavy leather", amount:1, raw: false}]},
-//     {name:"rugged leather boots", requirements:[{name:"rugged leather", amount:3, raw: false}]},
-//     {name:"rugged leather belt", requirements:[{name:"rugged leather", amount:3, raw: false}]},
-//     {name:"rugged leather gloves", requirements:[{name:"rugged leather", amount:3, raw: false}]},
-//     {name:"rugged leather cap", requirements:[{name:"rugged leather", amount:4, raw: false}]},
-//     {name:"rugged leather apron", requirements:[{name:"rugged leather", amount:5, raw: false}]},
-// ]
-
 export function craftSearch(type, name)
 {
     return crafts[type].find(craft => craft.name == name)

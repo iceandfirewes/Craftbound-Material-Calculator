@@ -7,6 +7,7 @@ export default function Calculator()
     function handleOptionChange(event)
     {
         setcraftOption(oldCraftOption => {
+          console.log(event.target.name)
             return {
                 ...oldCraftOption,
                 [event.target.name]: event.target.value
@@ -14,17 +15,22 @@ export default function Calculator()
         })
     }   
     return <section className="calculator">
+        {/*THIS USES CRAFTS OBJECTS*/}
         <div className="calculator--option">
-            <input name="amount" className="option--amount" type="text" value={craftOption.amount} onChange={(event) => handleOptionChange(event)}></input>
+            <select name="type" onChange={(event) => handleOptionChange(event)} value={craftOption.name}>
+              {Object.getOwnPropertyNames(crafts).map(profession => <option value={profession}>{profession}</option>)}
+            </select>
+            <input name="amount" type="text" value={craftOption.amount} onChange={(event) => handleOptionChange(event)}></input>
             <select name="name" onChange={(event) => handleOptionChange(event)} value={craftOption.name}>
-              {/* hard coded. need to add dropdown */}
-              {crafts["leatherworking"].map(craft => (craft.hasOwnProperty("requirements") ? <option value={craft.name}>{craft.name}</option> : undefined))}
+              {/*test later once add more professions*/}
+              {crafts[craftOption.type].map(craft => (craft.hasOwnProperty("requirements") ? <option value={craft.name}>{craft.name}</option> : undefined))}
             </select>
         </div>
         {/*createCraftBlueprint(craftOption.name, craftOption.amount)*/}
         {createCraftBluePrint(craftOption.type,craftOption.name, craftOption.amount, false)}
   </section>
 }
+{/*THIS USES searchRawMaterials, craftSearch*/}
 function createCraftBluePrint(type, name, amount, rawFlag)
 {
   if(rawFlag)
