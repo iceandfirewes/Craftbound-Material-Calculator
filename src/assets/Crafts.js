@@ -8,14 +8,17 @@ const raw_materials = {
         {name:"rested tannin", rarity: ["common"]},
         {name:"rugged hide",rarity:["common"]},
         {name:"aged tannin",rarity:["common"]}
+    ],
+    blacksmithing:[
+        {name: "copper ore", rarity: ["common"]},
+        {name: "iron ore", rarity: ["common"]},
+        {name: "sand flux", rarity: ["common"]},
+        {name: "coal", rarity: ["common"]},
+        {name: "limestone flux", rarity: ["common"]},
+        {name: "silver ore", rarity: ["common"]},
+        {name: "liquid flux", rarity: ["common"]},
     ]
-    
 }
-export function searchRawMaterials(type, name)
-{
-    return raw_materials[type].find(material => material.name == name)
-}
-//add more crafts
 export const crafts = {
     leatherworking:{
         //TIER 1
@@ -63,8 +66,37 @@ export const crafts = {
             {name:"rugged leather cap", requirements:[{type:"leatherworking", tier: "IV", name:"rugged leather", amount:4, raw: false}]},
             {name:"rugged leather apron", requirements:[{type:"leatherworking", tier: "IV", name:"rugged leather", amount:5, raw: false}]},
         ]
+    },
+    blacksmithing:{
+        I:[
+            {name:"bronze ingot", requirements:[
+                {type:"blacksmithing", tier: "I", name: "copper ore", amount:1, raw: true}]}
+        ],
+        II:[
+            {name:"iron ingot", requirements:[
+                {type:"blacksmithing", tier: "II", name: "iron ore", amount:2, raw: true},
+                {type:"blacksmithing", tier: "II", name: "sand flux", amount:1, raw: true}]}
+        ],
+        III:[
+            {name:"steel ingot", requirements:[
+                {type:"blacksmithing", tier: "III", name: "coal", amount:3, raw: true},
+                {type:"blacksmithing", tier: "III", name: "limestone flux", amount:1, raw: true},
+                {type:"blacksmithing", tier: "II", name: "iron ingot", amount:1, raw: false}]}
+        ],
+        IV:[
+            {name:"silver ingot", requirements:[
+                {type:"blacksmithing", tier: "IV", name: "silver ore", amount:4, raw: true},
+                {type:"blacksmithing", tier: "IV", name: "liquid flux", amount:1, raw: true},
+                {type:"blacksmithing", tier: "III", name: "steel ingot", amount:1, raw: false}]}
+        ],
     }
 }
+export function searchRawMaterials(type, name)
+{
+    return raw_materials[type].find(material => material.name == name)
+}
+//add more crafts
+
 export function craftSearch(type, tier, name)
 {
     return crafts[type][tier].find(craft => craft.name == name)
