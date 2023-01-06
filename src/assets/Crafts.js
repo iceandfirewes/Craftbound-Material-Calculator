@@ -7,40 +7,49 @@ export const rarityColor = {
     special: "#f6e34f",
 }
 const raw_materials = {
-    leatherworking:[
+    skinning:[
         {name: "raw hide", rarities: ["common"]},
         {name:"light hide", rarities: ["common"]},
-        {name:"tannin", rarities: ["common"]},
         {name:"heavy hide", rarities: ["common"]},
-        {name:"rested tannin", rarities: ["common"]},
         {name:"rugged hide",rarities:["common"]},
+
+    ],
+    leatherworking:[        
+        {name:"tannin", rarities: ["common"]},
+        {name:"rested tannin", rarities: ["common"]},
         {name:"aged tannin",rarities:["common"]}
     ],
-    blacksmithing:[
+    mining:[
         {name: "copper ore", rarities: ["common"]},
         {name: "iron ore", rarities: ["common"]},
-        {name: "sand flux", rarities: ["common"]},
         {name: "coal", rarities: ["common"]},
-        {name: "limestone flux", rarities: ["common"]},
         {name: "silver ore", rarities: ["common"]},
+    ],
+    blacksmithing:[
+        {name: "sand flux", rarities: ["common"]},
+        {name: "limestone flux", rarities: ["common"]},
         {name: "liquid flux", rarities: ["common"]},
     ],
-    tailoring:[
+    harvesting:[
         {name:"fiber", rarities: ["common"]},
         {name:"cotton", rarities: ["common"]},
-        {name:"coarse thread", rarities: ["common"]},
         {name:"hemp", rarities: ["common"]},
-        {name:"fine thread", rarities: ["common"]},
         {name:"silkweed",rarities:["common"]},
+    ],
+    tailoring:[
+        {name:"coarse thread", rarities: ["common"]},
+        {name:"fine thread", rarities: ["common"]},
         {name:"silken thread",rarities:["common"]}
     ],
-    woodworking:[
+    logging:[
         {name:"beech log", rarities: ["common"]},
         {name:"pine log", rarities: ["common"]},
-        {name:"coarse sandpaper", rarities: ["common"]},
         {name:"oak log", rarities: ["common"]},
-        {name:"rugged sandpaper", rarities: ["common"]},
         {name:"birch log", rarities: ["common"]},
+    ],
+    woodworking:[
+        {name:"coarse sandpaper", rarities: ["common"]},
+        {name:"rugged sandpaper", rarities: ["common"]},
         {name:"fine sandpaper", rarities: ["common"]},
     ],
     jewelcrafting:[
@@ -72,7 +81,7 @@ export const crafts = {
         //TIER 1
         I:[
             {name:"coarse leather", rarities:["common", "uncommon"], requirements:[
-                {type:"leatherworking", tier: "I", name: "raw hide", amount:1, raw: true}]},
+                {type:"skinning", tier: "I", name: "raw hide", amount:1, raw: true}]},
             {name:"coarse leather boots", rarities:["common", "uncommon"], requirements:[{type:"leatherworking", tier: "I", name:"coarse leather", amount:3, raw: false}]},
             {name:"coarse leather belt", rarities:["common", "uncommon"], requirements:[{type:"leatherworking", tier: "I", name:"coarse leather", amount:3, raw: false}]},
             {name:"coarse leather gloves", rarities:["common", "uncommon"], requirements:[{type:"leatherworking", tier: "I", name:"coarse leather", amount:3, raw: false}]},
@@ -82,7 +91,7 @@ export const crafts = {
         //TIER 2
         II:[
             {name:"light leather", rarities:["common", "uncommon","rare"], requirements:[
-                {type:"leatherworking", tier: "II", name:"light hide", amount:2, raw: true},
+                {type:"skinning", tier: "II", name:"light hide", amount:2, raw: true},
                 {type:"leatherworking", tier: "II", name:"tannin", amount:1, raw: true}]},
             {name:"light leather boots", rarities:["common", "uncommon","rare"], requirements:[{type:"leatherworking", tier: "II", name:"light leather", amount:3, raw: false}]},
             {name:"light leather belt", rarities:["common", "uncommon","rare"], requirements:[{type:"leatherworking", tier: "II", name:"light leather", amount:3, raw: false}]},
@@ -93,7 +102,7 @@ export const crafts = {
         //TIER 3
         III:[
             {name:"heavy leather", rarities:["common", "uncommon","rare","epic"], requirements:[
-                {type:"leatherworking", tier: "III", name:"heavy hide", amount:3, raw: true},
+                {type:"skinning", tier: "III", name:"heavy hide", amount:3, raw: true},
                 {type:"leatherworking", tier: "III", name:"rested tannin", amount:1, raw: true},
                 {type:"leatherworking", tier: "II", name:"light leather", amount:1, raw: false}]},
             {name:"heavy leather boots", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"leatherworking", tier: "III", name:"heavy leather", amount:3, raw: false}]},
@@ -105,7 +114,7 @@ export const crafts = {
         //TIER 4
         IV:[
             {name:"rugged leather", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[
-                {type:"leatherworking", tier: "IV", name:"rugged hide", amount:4, raw: true},
+                {type:"skinning", tier: "IV", name:"rugged hide", amount:4, raw: true},
                 {type:"leatherworking", tier: "IV", name:"aged tannin", amount:1, raw: true},
                 {type:"leatherworking", tier: "III", name:"heavy leather", amount:1, raw: false}]},
             {name:"rugged leather boots", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"leatherworking", tier: "IV", name:"rugged leather", amount:3, raw: false}]},
@@ -118,22 +127,22 @@ export const crafts = {
     blacksmithing:{
         I:[
             {name:"bronze ingot", rarities:["common", "uncommon"], requirements:[
-                {type:"blacksmithing", tier: "I", name: "copper ore", amount:1, raw: true}]}
+                {type:"mining", tier: "I", name: "copper ore", amount:1, raw: true}]}
         ],
         II:[
             {name:"iron ingot", rarities:["common", "uncommon","rare"], requirements:[
-                {type:"blacksmithing", tier: "II", name: "iron ore", amount:2, raw: true},
+                {type:"mining", tier: "II", name: "iron ore", amount:2, raw: true},
                 {type:"blacksmithing", tier: "II", name: "sand flux", amount:1, raw: true}]}
         ],
         III:[
             {name:"steel ingot", rarities:["common", "uncommon","rare","epic"], requirements:[
-                {type:"blacksmithing", tier: "III", name: "coal", amount:3, raw: true},
+                {type:"mining", tier: "III", name: "coal", amount:3, raw: true},
                 {type:"blacksmithing", tier: "III", name: "limestone flux", amount:1, raw: true},
                 {type:"blacksmithing", tier: "II", name: "iron ingot", amount:1, raw: false}]}
         ],
         IV:[
             {name:"silver ingot", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[
-                {type:"blacksmithing", tier: "IV", name: "silver ore", amount:4, raw: true},
+                {type:"mining", tier: "IV", name: "silver ore", amount:4, raw: true},
                 {type:"blacksmithing", tier: "IV", name: "liquid flux", amount:1, raw: true},
                 {type:"blacksmithing", tier: "III", name: "steel ingot", amount:1, raw: false}]}
         ],
@@ -142,7 +151,7 @@ export const crafts = {
         //TIER 1
         I:[
             {name:"linen cloth", rarities:["common", "uncommon"], requirements:[
-                {type:"tailoring", tier: "I", name: "fiber", amount:1, raw: true}]},
+                {type:"harvesting", tier: "I", name: "fiber", amount:1, raw: true}]},
             {name:"linen sash", rarities:["common", "uncommon"], requirements:[{type:"tailoring", tier: "I", name:"linen cloth", amount:3, raw: false}]},
             {name:"linen gloves", rarities:["common", "uncommon"], requirements:[{type:"tailoring", tier: "I", name:"linen cloth", amount:3, raw: false}]},
             {name:"linen bandana", rarities:["common", "uncommon"], requirements:[{type:"tailoring", tier: "I", name:"linen cloth", amount:4, raw: false}]},
@@ -151,7 +160,7 @@ export const crafts = {
         //TIER 2
         II:[
             {name:"wool cloth", rarities:["common", "uncommon","rare"], requirements:[
-                {type:"tailoring", tier: "II", name: "cotton", amount:2, raw: true},
+                {type:"harvesting", tier: "II", name: "cotton", amount:2, raw: true},
                 {type:"tailoring", tier: "II", name: "coarse thread", amount:1, raw: true}
             ]},
             {name:"wool sash", rarities:["common", "uncommon","rare"], requirements:[{type:"tailoring", tier: "II", name:"wool cloth", amount:3, raw: false}]},
@@ -162,7 +171,7 @@ export const crafts = {
         //TIER 3
         III:[
             {name:"sateen", rarities:["common", "uncommon","rare","epic"], requirements:[
-                {type:"tailoring", tier: "III", name: "hemp", amount:3, raw: true},
+                {type:"harvesting", tier: "III", name: "hemp", amount:3, raw: true},
                 {type:"tailoring", tier: "III", name: "fine thread", amount:1, raw: true},
                 {type:"tailoring", tier: "II", name: "wool cloth", amount:1, raw: false}
             ]},
@@ -174,7 +183,7 @@ export const crafts = {
         //TIER 4
         IV:[
             {name:"silk cloth", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[
-                {type:"tailoring", tier: "IV", name: "silkweed", amount:4, raw: true},
+                {type:"harvesting", tier: "IV", name: "silkweed", amount:4, raw: true},
                 {type:"tailoring", tier: "IV", name: "silken thread", amount:1, raw: true},
                 {type:"tailoring", tier: "III", name: "sateen", amount:1, raw: false}
             ]},
@@ -187,22 +196,22 @@ export const crafts = {
     woodworking:{
         I:[
             {name:"beech lumber", rarities:["common", "uncommon"], requirements:[
-                {type:"woodworking", tier: "I", name: "beech log", amount:1, raw: true}]}
+                {type:"logging", tier: "I", name: "beech log", amount:1, raw: true}]}
         ],
         II:[
             {name:"pine lumber", rarities:["common", "uncommon","rare"], requirements:[
-                {type:"woodworking", tier: "II", name: "pine log", amount:2, raw: true},
+                {type:"logging", tier: "II", name: "pine log", amount:2, raw: true},
                 {type:"woodworking", tier: "II", name: "coarse sandpaper", amount:1, raw: true}]}
         ],
         III:[
             {name:"oak lumber", rarities:["common", "uncommon","rare","epic"], requirements:[
-                {type:"woodworking", tier: "III", name: "oak log", amount:3, raw: true},
+                {type:"logging", tier: "III", name: "oak log", amount:3, raw: true},
                 {type:"woodworking", tier: "III", name: "rugged sandpaper", amount:1, raw: true},
                 {type:"woodworking", tier: "II", name: "pine lumber", amount:1, raw: false}]}
         ],
         IV:[
             {name:"birch lumber", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[
-                {type:"woodworking", tier: "IV", name: "birch log", amount:4, raw: true},
+                {type:"logging", tier: "IV", name: "birch log", amount:4, raw: true},
                 {type:"woodworking", tier: "IV", name: "fine sandpaper", amount:1, raw: true},
                 {type:"woodworking", tier: "III", name: "oak lumber", amount:1, raw: false}]}
         ],
