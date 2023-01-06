@@ -1,4 +1,4 @@
-import  {crafts, craftSearch, searchRawMaterials} from "./assets/Crafts.js"
+import  {rarityColor, crafts, craftSearch, searchRawMaterials} from "./assets/Crafts.js"
 import { useState } from "react"
 export default function Calculator()
 {
@@ -51,11 +51,11 @@ export default function Calculator()
             </select>
             <input name="amount" className="option--amount" type="text" value={craftOption.amount} onChange={(event) => handleOptionChange(event)}></input>
             <select name="name" onChange={(event) => handleOptionChange(event)} value={craftOption.name}>
-              {/*test later once add more professions*/}
               {crafts[craftOption.type][craftOption.tier].map(craft => (craft.hasOwnProperty("requirements") ? <option value={craft.name}>{craft.name}</option> : undefined))}
             </select>
         </div>
         {createCraftBluePrint(craftOption.type, craftOption.tier, craftOption.name, craftOption.amount, false)}
+        <div className="materialRarity"></div>
   </section>
 }
 {/*THIS USES searchRawMaterials, craftSearch*/}
@@ -68,11 +68,14 @@ function createCraftBluePrint(type, tier, name, amount, rawFlag)
   {
     //query debug
     //console.log(type, name)
-    let rawMaterial = searchRawMaterials(type, name)
+    const rawMaterial = searchRawMaterials(type, name)
+    //create the material rarity jsx object
+    const rarityDisplay = rawMaterial.rarities.map(rarity => (<span className="materialRarity" style={{backgroundColor: rarityColor[rarity]}}/>))
+    console.log(rarityDisplay)
     return <div className="ingredients">
-    <span>{rawMaterial.name}</span>
-    <span>x{amount}</span>
-    <input type="checkbox"></input>
+      {rarityDisplay}
+      <span>{rawMaterial.name}</span>
+      <span>x{amount}</span>
     </div>
   }
   else{

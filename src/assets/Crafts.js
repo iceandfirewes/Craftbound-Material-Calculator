@@ -1,32 +1,72 @@
+export const rarityColor = {
+    common: "#ffffff",
+    unconmmon: "#31c456",
+    rare: "#1891ff",
+    epic: "#9479ff",
+    legendary: "#fa794b",
+    special: "#f6e34f",
+}
 const raw_materials = {
     //LEATHERWORKING
     leatherworking:[
-        {name: "raw hide", rarity: ["common"]},
-        {name:"light hide", rarity: ["common"]},
-        {name:"tannin", rarity: ["common"]},
-        {name:"heavy hide", rarity: ["common"]},
-        {name:"rested tannin", rarity: ["common"]},
-        {name:"rugged hide",rarity:["common"]},
-        {name:"aged tannin",rarity:["common"]}
+        {name: "raw hide", rarities: ["common"]},
+        {name:"light hide", rarities: ["common"]},
+        {name:"tannin", rarities: ["common"]},
+        {name:"heavy hide", rarities: ["common"]},
+        {name:"rested tannin", rarities: ["common"]},
+        {name:"rugged hide",rarities:["common"]},
+        {name:"aged tannin",rarities:["common"]}
     ],
     blacksmithing:[
-        {name: "copper ore", rarity: ["common"]},
-        {name: "iron ore", rarity: ["common"]},
-        {name: "sand flux", rarity: ["common"]},
-        {name: "coal", rarity: ["common"]},
-        {name: "limestone flux", rarity: ["common"]},
-        {name: "silver ore", rarity: ["common"]},
-        {name: "liquid flux", rarity: ["common"]},
+        {name: "copper ore", rarities: ["common"]},
+        {name: "iron ore", rarities: ["common"]},
+        {name: "sand flux", rarities: ["common"]},
+        {name: "coal", rarities: ["common"]},
+        {name: "limestone flux", rarities: ["common"]},
+        {name: "silver ore", rarities: ["common"]},
+        {name: "liquid flux", rarities: ["common"]},
     ],
     tailoring:[
-        {name:"fiber", rarity: ["common"]},
-        {name:"cotton", rarity: ["common"]},
-        {name:"coarse thread", rarity: ["common"]},
-        {name:"hemp", rarity: ["common"]},
-        {name:"fine thread", rarity: ["common"]},
-        {name:"silkweed",rarity:["common"]},
-        {name:"silken thread",rarity:["common"]}
+        {name:"fiber", rarities: ["common"]},
+        {name:"cotton", rarities: ["common"]},
+        {name:"coarse thread", rarities: ["common"]},
+        {name:"hemp", rarities: ["common"]},
+        {name:"fine thread", rarities: ["common"]},
+        {name:"silkweed",rarities:["common"]},
+        {name:"silken thread",rarities:["common"]}
     ],
+    woodworking:[
+        {name:"beech log", rarities: ["common"]},
+        {name:"pine log", rarities: ["common"]},
+        {name:"coarse sandpaper", rarities: ["common"]},
+        {name:"oak log", rarities: ["common"]},
+        {name:"rugged sandpaper", rarities: ["common"]},
+        {name:"birch log", rarities: ["common"]},
+        {name:"fine sandpaper", rarities: ["common"]},
+    ],
+    jewelcrafting:[
+        //T1
+        {name:"flint", rarities: ["common"]},
+        {name:"bronze wire", rarities: ["common"]},
+        {name:"bronze chain", rarities: ["common"]},
+        //T2
+        {name:"weak solvent", rarities: ["common"]},
+        {name:"emerald ore", rarities: ["uncommon"]},
+        {name:"iron wire", rarities: ["common"]},
+        {name:"iron chain", rarities: ["common"]},
+        //T3
+        {name:"amber ore", rarities: ["uncommon"]},
+        {name:"potent solvent", rarities: ["common"]},
+        {name:"brilliant ruby ore", rarities: ["rare"]},
+        {name:"steel wire", rarities: ["common"]},
+        {name:"steel chain", rarities: ["common"]},
+        {name:"flint", rarities: ["common"]},
+        //T4
+        {name:"pure solvent", rarities: ["common"]},
+        {name:"pristine crystal ore", rarities: ["epic"]},
+        {name:"brilliant aquamarine ore", rarities: ["rare"]},
+        {name:"silver wire", rarities: ["common"]},
+    ]
 }
 export const crafts = {
     leatherworking:{
@@ -144,7 +184,30 @@ export const crafts = {
             {name:"silk bandana", requirements:[{type:"tailoring", tier: "IV", name:"silk cloth", amount:4, raw: false}]},
             {name:"silk shirt", requirements:[{type:"tailoring", tier: "IV", name:"silk cloth", amount:5, raw: false}]},
         ]
-    }
+    },
+    woodworking:{
+        I:[
+            {name:"beech lumber", requirements:[
+                {type:"woodworking", tier: "I", name: "beech log", amount:1, raw: true}]}
+        ],
+        II:[
+            {name:"pine lumber", requirements:[
+                {type:"woodworking", tier: "II", name: "pine log", amount:2, raw: true},
+                {type:"woodworking", tier: "II", name: "coarse sandpaper", amount:1, raw: true}]}
+        ],
+        III:[
+            {name:"oak lumber", requirements:[
+                {type:"woodworking", tier: "III", name: "oak log", amount:3, raw: true},
+                {type:"woodworking", tier: "III", name: "rugged sandpaper", amount:1, raw: true},
+                {type:"woodworking", tier: "II", name: "pine lumber", amount:1, raw: false}]}
+        ],
+        IV:[
+            {name:"birch lumber", requirements:[
+                {type:"woodworking", tier: "IV", name: "birch log", amount:4, raw: true},
+                {type:"woodworking", tier: "IV", name: "fine sandpaper", amount:1, raw: true},
+                {type:"woodworking", tier: "III", name: "oak lumber", amount:1, raw: false}]}
+        ],
+    },
 }
 export function searchRawMaterials(type, name)
 {

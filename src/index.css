@@ -37,5 +37,11 @@ text-align: center;
   gap: 1em;
 }
 .ingredients {
-  text-align: left;
+  display: flex;
+}
+.materialRarity {
+  width: .5em;
+  height: .5em;
+  border-radius: 50%;
+  align-self: center;
 }
