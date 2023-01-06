@@ -32,7 +32,7 @@ export default function Calculator()
             {
               return event.target.value
             }
-            else
+            else if(event.target.name == "amount")
             {
               return oldCraftOption.name
             }
@@ -61,9 +61,9 @@ export default function Calculator()
 function createIngredientDiv(material, amount) {
   return <div className="ingredients">
     {/*material color to name to amount*/}
-    {material.rarities.map(rarity => (<span className="materialRarity" style={{backgroundColor: rarityColor[rarity]}}/>))}
-    <span>{material.name}</span>
-    <span>x{amount}</span>
+    <div>{material.name}</div>
+    <div>x{amount}</div>
+    {material.rarities.map(rarity => (<span className="rarity" style={{backgroundColor: rarityColor[rarity]}}/>))}
   </div>
 }
 /**recursive blueprint generator

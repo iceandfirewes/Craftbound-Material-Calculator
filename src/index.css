@@ -39,7 +39,8 @@ text-align: center;
 .ingredients {
   display: flex;
 }
-.materialRarity {
+.rarity {
+  margin-top: 8px;
   width: .5em;
   height: .5em;
   border-radius: 50%;
