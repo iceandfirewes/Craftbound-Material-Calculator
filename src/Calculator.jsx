@@ -1,4 +1,4 @@
-import  {crafts, craftSearch, searchRawMaterials} from "./assets/Crafts.js"
+import  {rarityColor, crafts, craftSearch, searchRawMaterials} from "./assets/Crafts.js"
 import { useState } from "react"
 export default function Calculator()
 {
@@ -51,12 +51,20 @@ export default function Calculator()
             </select>
             <input name="amount" className="option--amount" type="text" value={craftOption.amount} onChange={(event) => handleOptionChange(event)}></input>
             <select name="name" onChange={(event) => handleOptionChange(event)} value={craftOption.name}>
-              {/*test later once add more professions*/}
               {crafts[craftOption.type][craftOption.tier].map(craft => (craft.hasOwnProperty("requirements") ? <option value={craft.name}>{craft.name}</option> : undefined))}
             </select>
         </div>
         {createCraftBluePrint(craftOption.type, craftOption.tier, craftOption.name, craftOption.amount, false)}
+        <div className="materialRarity"></div>
   </section>
+}
+function createIngredientDiv(material, amount) {
+  return <div className="ingredients">
+    {/*material color to name to amount*/}
+    {material.rarities.map(rarity => (<span className="materialRarity" style={{backgroundColor: rarityColor[rarity]}}/>))}
+    <span>{material.name}</span>
+    <span>x{amount}</span>
+  </div>
 }
 {/*THIS USES searchRawMaterials, craftSearch*/}
 //recursive blueprint generator
@@ -68,23 +76,20 @@ function createCraftBluePrint(type, tier, name, amount, rawFlag)
   {
     //query debug
     //console.log(type, name)
-    let rawMaterial = searchRawMaterials(type, name)
-    return <div className="ingredients">
-    <span>{rawMaterial.name}</span>
-    <span>x{amount}</span>
-    <input type="checkbox"></input>
-    </div>
+    const material = searchRawMaterials(type, name)
+    return createIngredientDiv(material, amount)
   }
   else{
     //query debug
     //console.log(type, tier, name)
-    let craft = craftSearch(type, tier, name)
-    const child = craft.requirements.map(requirement => createCraftBluePrint(type = requirement.type, requirement.tier, requirement.name, amount * requirement.amount, requirement.raw))
+    let material = craftSearch(type, tier, name)
+    const child = material.requirements.map(requirement => createCraftBluePrint(type = requirement.type, requirement.tier, requirement.name, amount * requirement.amount, requirement.raw))
     return <div className='steps'>
-      <div className="ingredients">
-        <span>{name}</span>
+      {/* <div className="ingredients">
+        <span>{craft.name}</span>
         <span>x{amount}</span>
-      </div>
+      </div> */}
+      {createIngredientDiv(material, amount)}
       <div>{child}</div>
     </div>
   }
