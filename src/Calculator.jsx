@@ -58,6 +58,14 @@ export default function Calculator()
         <div className="materialRarity"></div>
   </section>
 }
+function createIngredientDiv(material, amount) {
+  return <div className="ingredients">
+    {/*material color to name to amount*/}
+    {material.rarities.map(rarity => (<span className="materialRarity" style={{backgroundColor: rarityColor[rarity]}}/>))}
+    <span>{material.name}</span>
+    <span>x{amount}</span>
+  </div>
+}
 {/*THIS USES searchRawMaterials, craftSearch*/}
 //recursive blueprint generator
 function createCraftBluePrint(type, tier, name, amount, rawFlag)
@@ -68,26 +76,20 @@ function createCraftBluePrint(type, tier, name, amount, rawFlag)
   {
     //query debug
     //console.log(type, name)
-    const rawMaterial = searchRawMaterials(type, name)
-    //create the material rarity jsx object
-    const rarityDisplay = rawMaterial.rarities.map(rarity => (<span className="materialRarity" style={{backgroundColor: rarityColor[rarity]}}/>))
-    console.log(rarityDisplay)
-    return <div className="ingredients">
-      {rarityDisplay}
-      <span>{rawMaterial.name}</span>
-      <span>x{amount}</span>
-    </div>
+    const material = searchRawMaterials(type, name)
+    return createIngredientDiv(material, amount)
   }
   else{
     //query debug
     //console.log(type, tier, name)
-    let craft = craftSearch(type, tier, name)
-    const child = craft.requirements.map(requirement => createCraftBluePrint(type = requirement.type, requirement.tier, requirement.name, amount * requirement.amount, requirement.raw))
+    let material = craftSearch(type, tier, name)
+    const child = material.requirements.map(requirement => createCraftBluePrint(type = requirement.type, requirement.tier, requirement.name, amount * requirement.amount, requirement.raw))
     return <div className='steps'>
-      <div className="ingredients">
-        <span>{name}</span>
+      {/* <div className="ingredients">
+        <span>{craft.name}</span>
         <span>x{amount}</span>
-      </div>
+      </div> */}
+      {createIngredientDiv(material, amount)}
       <div>{child}</div>
     </div>
   }
