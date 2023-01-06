@@ -112,46 +112,46 @@ export const crafts = {
         I:[
             {name:"coarse leather", rarities:["common", "uncommon"], requirements:[
                 {type:"skinning", tier: "I", name: "raw hide", amount:1, raw: true}]},
-            {name:"coarse leather boots", rarities:["common", "uncommon"], requirements:[{type:"leatherworking", tier: "I", name:"coarse leather", amount:3, raw: false}]},
-            {name:"coarse leather belt", rarities:["common", "uncommon"], requirements:[{type:"leatherworking", tier: "I", name:"coarse leather", amount:3, raw: false}]},
-            {name:"coarse leather gloves", rarities:["common", "uncommon"], requirements:[{type:"leatherworking", tier: "I", name:"coarse leather", amount:3, raw: false}]},
-            {name:"coarse leather cap", rarities:["common", "uncommon"], requirements:[{type:"leatherworking", tier: "I", name:"coarse leather", amount:4, raw: false}]},
-            {name:"coarse leather apron", rarities:["common", "uncommon"], requirements:[{type:"leatherworking", tier: "I", name:"coarse leather", amount:5, raw: false}]},
+            {name:"coarse leather boots", rarities:["common", "uncommon"], requirements:[{type:"leatherworking", tier: "I", name:"coarse leather", amount:3,}]},
+            {name:"coarse leather belt", rarities:["common", "uncommon"], requirements:[{type:"leatherworking", tier: "I", name:"coarse leather", amount:3,}]},
+            {name:"coarse leather gloves", rarities:["common", "uncommon"], requirements:[{type:"leatherworking", tier: "I", name:"coarse leather", amount:3,}]},
+            {name:"coarse leather cap", rarities:["common", "uncommon"], requirements:[{type:"leatherworking", tier: "I", name:"coarse leather", amount:4,}]},
+            {name:"coarse leather apron", rarities:["common", "uncommon"], requirements:[{type:"leatherworking", tier: "I", name:"coarse leather", amount:5,}]},
         ],
         //TIER 2
         II:[
             {name:"light leather", rarities:["common", "uncommon","rare"], requirements:[
                 {type:"skinning", tier: "II", name:"light hide", amount:2, raw: true},
                 {type:"leatherworking", tier: "II", name:"tannin", amount:1, raw: true}]},
-            {name:"light leather boots", rarities:["common", "uncommon","rare"], requirements:[{type:"leatherworking", tier: "II", name:"light leather", amount:3, raw: false}]},
-            {name:"light leather belt", rarities:["common", "uncommon","rare"], requirements:[{type:"leatherworking", tier: "II", name:"light leather", amount:3, raw: false}]},
-            {name:"light leather gloves", rarities:["common", "uncommon","rare"], requirements:[{type:"leatherworking", tier: "II", name:"light leather", amount:3, raw: false}]},
-            {name:"light leather cap", rarities:["common", "uncommon","rare"], requirements:[{type:"leatherworking", tier: "II", name:"light leather", amount:4, raw: false}]},
-            {name:"light leather apron", rarities:["common", "uncommon","rare"], requirements:[{type:"leatherworking", tier: "II", name:"light leather", amount:5, raw: false}]},
+            {name:"light leather boots", rarities:["common", "uncommon","rare"], requirements:[{type:"leatherworking", tier: "II", name:"light leather", amount:3,}]},
+            {name:"light leather belt", rarities:["common", "uncommon","rare"], requirements:[{type:"leatherworking", tier: "II", name:"light leather", amount:3,}]},
+            {name:"light leather gloves", rarities:["common", "uncommon","rare"], requirements:[{type:"leatherworking", tier: "II", name:"light leather", amount:3,}]},
+            {name:"light leather cap", rarities:["common", "uncommon","rare"], requirements:[{type:"leatherworking", tier: "II", name:"light leather", amount:4,}]},
+            {name:"light leather apron", rarities:["common", "uncommon","rare"], requirements:[{type:"leatherworking", tier: "II", name:"light leather", amount:5,}]},
         ],
         //TIER 3
         III:[
             {name:"heavy leather", rarities:["common", "uncommon","rare","epic"], requirements:[
                 {type:"skinning", tier: "III", name:"heavy hide", amount:3, raw: true},
                 {type:"leatherworking", tier: "III", name:"rested tannin", amount:1, raw: true},
-                {type:"leatherworking", tier: "II", name:"light leather", amount:1, raw: false}]},
-            {name:"heavy leather boots", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"leatherworking", tier: "III", name:"heavy leather", amount:3, raw: false}]},
-            {name:"heavy leather belt", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"leatherworking", tier: "III", name:"heavy leather", amount:3, raw: false}]},
-            {name:"heavy leather gloves", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"leatherworking", tier: "III", name:"heavy leather", amount:3, raw: false}]},
-            {name:"heavy leather cap", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"leatherworking", tier: "III", name:"heavy leather", amount:4, raw: false}]},
-            {name:"heavy leather apron", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"leatherworking", tier: "III", name:"heavy leather", amount:5, raw: false}]},
+                {type:"leatherworking", tier: "II", name:"light leather", amount:1,}]},
+            {name:"heavy leather boots", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"leatherworking", tier: "III", name:"heavy leather", amount:3,}]},
+            {name:"heavy leather belt", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"leatherworking", tier: "III", name:"heavy leather", amount:3,}]},
+            {name:"heavy leather gloves", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"leatherworking", tier: "III", name:"heavy leather", amount:3,}]},
+            {name:"heavy leather cap", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"leatherworking", tier: "III", name:"heavy leather", amount:4,}]},
+            {name:"heavy leather apron", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"leatherworking", tier: "III", name:"heavy leather", amount:5,}]},
         ],
         //TIER 4
         IV:[
             {name:"rugged leather", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[
                 {type:"skinning", tier: "IV", name:"rugged hide", amount:4, raw: true},
                 {type:"leatherworking", tier: "IV", name:"aged tannin", amount:1, raw: true},
-                {type:"leatherworking", tier: "III", name:"heavy leather", amount:1, raw: false}]},
-            {name:"rugged leather boots", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"leatherworking", tier: "IV", name:"rugged leather", amount:3, raw: false}]},
-            {name:"rugged leather belt", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"leatherworking", tier: "IV", name:"rugged leather", amount:3, raw: false}]},
-            {name:"rugged leather gloves", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"leatherworking", tier: "IV", name:"rugged leather", amount:3, raw: false}]},
-            {name:"rugged leather cap", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"leatherworking", tier: "IV", name:"rugged leather", amount:4, raw: false}]},
-            {name:"rugged leather apron", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"leatherworking", tier: "IV", name:"rugged leather", amount:5, raw: false}]},
+                {type:"leatherworking", tier: "III", name:"heavy leather", amount:1,}]},
+            {name:"rugged leather boots", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"leatherworking", tier: "IV", name:"rugged leather", amount:3,}]},
+            {name:"rugged leather belt", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"leatherworking", tier: "IV", name:"rugged leather", amount:3,}]},
+            {name:"rugged leather gloves", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"leatherworking", tier: "IV", name:"rugged leather", amount:3,}]},
+            {name:"rugged leather cap", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"leatherworking", tier: "IV", name:"rugged leather", amount:4,}]},
+            {name:"rugged leather apron", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"leatherworking", tier: "IV", name:"rugged leather", amount:5,}]},
         ]
     },
     blacksmithing:{
@@ -168,13 +168,13 @@ export const crafts = {
             {name:"steel ingot", rarities:["common", "uncommon","rare","epic"], requirements:[
                 {type:"mining", tier: "III", name: "coal", amount:3, raw: true},
                 {type:"blacksmithing", tier: "III", name: "limestone flux", amount:1, raw: true},
-                {type:"blacksmithing", tier: "II", name: "iron ingot", amount:1, raw: false}]}
+                {type:"blacksmithing", tier: "II", name: "iron ingot", amount:1,}]}
         ],
         IV:[
             {name:"silver ingot", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[
                 {type:"mining", tier: "IV", name: "silver ore", amount:4, raw: true},
                 {type:"blacksmithing", tier: "IV", name: "liquid flux", amount:1, raw: true},
-                {type:"blacksmithing", tier: "III", name: "steel ingot", amount:1, raw: false}]}
+                {type:"blacksmithing", tier: "III", name: "steel ingot", amount:1,}]}
         ],
     },
     tailoring:{
@@ -182,10 +182,10 @@ export const crafts = {
         I:[
             {name:"linen cloth", rarities:["common", "uncommon"], requirements:[
                 {type:"harvesting", tier: "I", name: "fiber", amount:1, raw: true}]},
-            {name:"linen sash", rarities:["common", "uncommon"], requirements:[{type:"tailoring", tier: "I", name:"linen cloth", amount:3, raw: false}]},
-            {name:"linen gloves", rarities:["common", "uncommon"], requirements:[{type:"tailoring", tier: "I", name:"linen cloth", amount:3, raw: false}]},
-            {name:"linen bandana", rarities:["common", "uncommon"], requirements:[{type:"tailoring", tier: "I", name:"linen cloth", amount:4, raw: false}]},
-            {name:"linen shirt", rarities:["common", "uncommon"], requirements:[{type:"tailoring", tier: "I", name:"linen cloth", amount:5, raw: false}]},
+            {name:"linen sash", rarities:["common", "uncommon"], requirements:[{type:"tailoring", tier: "I", name:"linen cloth", amount:3,}]},
+            {name:"linen gloves", rarities:["common", "uncommon"], requirements:[{type:"tailoring", tier: "I", name:"linen cloth", amount:3,}]},
+            {name:"linen bandana", rarities:["common", "uncommon"], requirements:[{type:"tailoring", tier: "I", name:"linen cloth", amount:4,}]},
+            {name:"linen shirt", rarities:["common", "uncommon"], requirements:[{type:"tailoring", tier: "I", name:"linen cloth", amount:5,}]},
         ],
         //TIER 2
         II:[
@@ -193,34 +193,34 @@ export const crafts = {
                 {type:"harvesting", tier: "II", name: "cotton", amount:2, raw: true},
                 {type:"tailoring", tier: "II", name: "coarse thread", amount:1, raw: true}
             ]},
-            {name:"wool sash", rarities:["common", "uncommon","rare"], requirements:[{type:"tailoring", tier: "II", name:"wool cloth", amount:3, raw: false}]},
-            {name:"wool gloves", rarities:["common", "uncommon","rare"], requirements:[{type:"tailoring", tier: "II", name:"wool cloth", amount:3, raw: false}]},
-            {name:"wool bandana", rarities:["common", "uncommon","rare"], requirements:[{type:"tailoring", tier: "II", name:"wool cloth", amount:4, raw: false}]},
-            {name:"wool shirt", rarities:["common", "uncommon","rare"], requirements:[{type:"tailoring", tier: "II", name:"wool cloth", amount:5, raw: false}]},
+            {name:"wool sash", rarities:["common", "uncommon","rare"], requirements:[{type:"tailoring", tier: "II", name:"wool cloth", amount:3,}]},
+            {name:"wool gloves", rarities:["common", "uncommon","rare"], requirements:[{type:"tailoring", tier: "II", name:"wool cloth", amount:3,}]},
+            {name:"wool bandana", rarities:["common", "uncommon","rare"], requirements:[{type:"tailoring", tier: "II", name:"wool cloth", amount:4,}]},
+            {name:"wool shirt", rarities:["common", "uncommon","rare"], requirements:[{type:"tailoring", tier: "II", name:"wool cloth", amount:5,}]},
         ],
         //TIER 3
         III:[
             {name:"sateen", rarities:["common", "uncommon","rare","epic"], requirements:[
                 {type:"harvesting", tier: "III", name: "hemp", amount:3, raw: true},
                 {type:"tailoring", tier: "III", name: "fine thread", amount:1, raw: true},
-                {type:"tailoring", tier: "II", name: "wool cloth", amount:1, raw: false}
+                {type:"tailoring", tier: "II", name: "wool cloth", amount:1,}
             ]},
-            {name:"sateen sash", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"tailoring", tier: "III", name:"sateen", amount:3, raw: false}]},
-            {name:"sateen gloves", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"tailoring", tier: "III", name:"sateen", amount:3, raw: false}]},
-            {name:"sateen bandana", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"tailoring", tier: "III", name:"sateen", amount:4, raw: false}]},
-            {name:"sateen shirt", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"tailoring", tier: "III", name:"sateen", amount:5, raw: false}]},
+            {name:"sateen sash", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"tailoring", tier: "III", name:"sateen", amount:3,}]},
+            {name:"sateen gloves", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"tailoring", tier: "III", name:"sateen", amount:3,}]},
+            {name:"sateen bandana", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"tailoring", tier: "III", name:"sateen", amount:4,}]},
+            {name:"sateen shirt", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"tailoring", tier: "III", name:"sateen", amount:5,}]},
         ],
         //TIER 4
         IV:[
             {name:"silk cloth", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[
                 {type:"harvesting", tier: "IV", name: "silkweed", amount:4, raw: true},
                 {type:"tailoring", tier: "IV", name: "silken thread", amount:1, raw: true},
-                {type:"tailoring", tier: "III", name: "sateen", amount:1, raw: false}
+                {type:"tailoring", tier: "III", name: "sateen", amount:1,}
             ]},
-            {name:"silk sash", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"tailoring", tier: "IV", name:"silk cloth", amount:3, raw: false}]},
-            {name:"silk gloves", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"tailoring", tier: "IV", name:"silk cloth", amount:3, raw: false}]},
-            {name:"silk bandana", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"tailoring", tier: "IV", name:"silk cloth", amount:4, raw: false}]},
-            {name:"silk shirt", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"tailoring", tier: "IV", name:"silk cloth", amount:5, raw: false}]},
+            {name:"silk sash", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"tailoring", tier: "IV", name:"silk cloth", amount:3,}]},
+            {name:"silk gloves", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"tailoring", tier: "IV", name:"silk cloth", amount:3,}]},
+            {name:"silk bandana", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"tailoring", tier: "IV", name:"silk cloth", amount:4,}]},
+            {name:"silk shirt", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"tailoring", tier: "IV", name:"silk cloth", amount:5,}]},
         ]
     },
     woodworking:{
@@ -237,13 +237,13 @@ export const crafts = {
             {name:"oak lumber", rarities:["common", "uncommon","rare","epic"], requirements:[
                 {type:"logging", tier: "III", name: "oak log", amount:3, raw: true},
                 {type:"woodworking", tier: "III", name: "rugged sandpaper", amount:1, raw: true},
-                {type:"woodworking", tier: "II", name: "pine lumber", amount:1, raw: false}]}
+                {type:"woodworking", tier: "II", name: "pine lumber", amount:1,}]}
         ],
         IV:[
             {name:"birch lumber", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[
                 {type:"logging", tier: "IV", name: "birch log", amount:4, raw: true},
                 {type:"woodworking", tier: "IV", name: "fine sandpaper", amount:1, raw: true},
-                {type:"woodworking", tier: "III", name: "oak lumber", amount:1, raw: false}]}
+                {type:"woodworking", tier: "III", name: "oak lumber", amount:1,}]}
         ],
     },
     jewelcrafting:{
@@ -251,13 +251,13 @@ export const crafts = {
             {name:"flint ring", rarities:["common"], requirements:[
                 {type:"harvesting", tier: "I", name: "flint", amount:1, raw: true}]},
             {name:"bronze ring", rarities:["common","uncommon"], requirements:[
-                {type:"blacksmithing", tier: "I", name: "bronze ingot", amount:2, raw: false},
+                {type:"blacksmithing", tier: "I", name: "bronze ingot", amount:2,},
                 {type:"jewelcrafting", tier: "I", name: "bronze wire", amount:1, raw: true}]},
             {name:"bronze earrings", rarities:["common","uncommon"], requirements:[
-                {type:"blacksmithing", tier: "I", name: "bronze ingot", amount:2, raw: false},
+                {type:"blacksmithing", tier: "I", name: "bronze ingot", amount:2,},
                 {type:"jewelcrafting", tier: "I", name: "bronze wire", amount:1, raw: true}]},
             {name:"bronze necklace", rarities:["common","uncommon"], requirements:[
-                {type:"blacksmithing", tier: "I", name: "bronze ingot", amount:2, raw: false},
+                {type:"blacksmithing", tier: "I", name: "bronze ingot", amount:2,},
                 {type:"jewelcrafting", tier: "I", name: "bronze chain", amount:1, raw: true}]},
         ],
         II:[
@@ -266,23 +266,23 @@ export const crafts = {
                 {type:"mining", tier: "II", name: "emerald ore", amount:1, raw: true}]},
             {name:"iron ring", rarities:["common","uncommon","rare"], requirements:[
                 {type:"jewelcrafting", tier: "II", name: "iron wire", amount:1, raw: true},
-                {type:"blacksmithing", tier: "II", name: "iron ingot", amount:2, raw: false}]},
+                {type:"blacksmithing", tier: "II", name: "iron ingot", amount:2,}]},
             {name:"iron earrings", rarities:["common","uncommon","rare"], requirements:[
                 {type:"jewelcrafting", tier: "II", name: "iron wire", amount:1, raw: true},
-                {type:"blacksmithing", tier: "II", name: "iron ingot", amount:2, raw: false}]},
+                {type:"blacksmithing", tier: "II", name: "iron ingot", amount:2,}]},
             {name:"iron necklace", rarities:["common","uncommon","rare"], requirements:[
                 {type:"jewelcrafting", tier: "II", name: "iron chain", amount:1, raw: true},
-                {type:"blacksmithing", tier: "II", name: "iron ingot", amount:2, raw: false}]},
+                {type:"blacksmithing", tier: "II", name: "iron ingot", amount:2,}]},
             //FIRST PROBLEM. this need uncommon, rare ring but cant do that
             {name:"iron emerald ring", rarities:["uncommon","rare"], requirements:[
-                {type:"jewelcrafting", tier: "II", name: "iron ring", amount:1, raw: false},
-                {type:"jewelcrafting", tier: "II", name: "cut emerald", amount:1, raw: false}]},
+                {type:"jewelcrafting", tier: "II", name: "iron ring", amount:1,},
+                {type:"jewelcrafting", tier: "II", name: "cut emerald", amount:1,}]},
             {name:"iron emerald earrings", rarities:["uncommon","rare"], requirements:[
-                {type:"jewelcrafting", tier: "II", name: "iron earrings", amount:1, raw: false},
-                {type:"jewelcrafting", tier: "II", name: "cut emerald", amount:1, raw: false}]},
+                {type:"jewelcrafting", tier: "II", name: "iron earrings", amount:1,},
+                {type:"jewelcrafting", tier: "II", name: "cut emerald", amount:1,}]},
             {name:"iron emerald necklace", rarities:["uncommon","rare"], requirements:[
-                {type:"jewelcrafting", tier: "II", name: "iron necklace", amount:1, raw: false},
-                {type:"jewelcrafting", tier: "II", name: "cut emerald", amount:1, raw: false}]},
+                {type:"jewelcrafting", tier: "II", name: "iron necklace", amount:1,},
+                {type:"jewelcrafting", tier: "II", name: "cut emerald", amount:1,}]},
         ],
         III:[
             {name:"cut amber", rarities:["uncommon"], requirements:[
@@ -293,26 +293,26 @@ export const crafts = {
                 {type:"mining", tier: "III", name: "brilliant ruby ore", amount:1, raw: true}]},
             {name:"steel ring", rarities:["common","uncommon","rare","epic"], requirements:[
                 {type:"jewelcrafting", tier: "III", name: "steel wire", amount:1, raw: true},
-                {type:"blacksmithing", tier: "III", name: "steel ingot", amount:2, raw: false}]},
+                {type:"blacksmithing", tier: "III", name: "steel ingot", amount:2,}]},
             {name:"steel earrings", rarities:["common","uncommon","rare","epic"], requirements:[
                 {type:"jewelcrafting", tier: "III", name: "steel wire", amount:1, raw: true},
-                {type:"blacksmithing", tier: "III", name: "steel ingot", amount:2, raw: false}]},
+                {type:"blacksmithing", tier: "III", name: "steel ingot", amount:2,}]},
             {name:"steel necklace", rarities:["common","uncommon","rare","epic"], requirements:[
                 {type:"jewelcrafting", tier: "III", name: "steel chain", amount:1, raw: true},
-                {type:"blacksmithing", tier: "III", name: "steel ingot", amount:2, raw: false}]},
+                {type:"blacksmithing", tier: "III", name: "steel ingot", amount:2,}]},
             //BELOW HERE RARITY
             {name:"steel amber ring", rarities:["uncommon","rare","epic"], requirements:[
-                {type:"jewelcrafting", tier: "III", name: "cut amber", amount:1, raw: false},
-                {type:"jewelcrafting", tier: "III", name: "steel ring", amount:1, raw: false}]},
+                {type:"jewelcrafting", tier: "III", name: "cut amber", amount:1,},
+                {type:"jewelcrafting", tier: "III", name: "steel ring", amount:1,}]},
             {name:"steel amber earrings", rarities:["uncommon","rare","epic"], requirements:[
-                {type:"jewelcrafting", tier: "III", name: "cut amber", amount:1, raw: false},
-                {type:"jewelcrafting", tier: "III", name: "steel earrings", amount:1, raw: false}]},
+                {type:"jewelcrafting", tier: "III", name: "cut amber", amount:1,},
+                {type:"jewelcrafting", tier: "III", name: "steel earrings", amount:1,}]},
             {name:"steel brilliant ruby ring", rarities:["rare","epic"], requirements:[
-                {type:"jewelcrafting", tier: "III", name: "cut brilliant ruby", amount:1, raw: false},
-                {type:"jewelcrafting", tier: "III", name: "steel ring", amount:1, raw: false}]},
+                {type:"jewelcrafting", tier: "III", name: "cut brilliant ruby", amount:1,},
+                {type:"jewelcrafting", tier: "III", name: "steel ring", amount:1,}]},
             {name:"steel amber necklace", rarities:["uncommon","rare","epic"], requirements:[
-                {type:"jewelcrafting", tier: "III", name: "cut amber", amount:1, raw: false},
-                {type:"jewelcrafting", tier: "III", name: "steel necklace", amount:1, raw: false}]},
+                {type:"jewelcrafting", tier: "III", name: "cut amber", amount:1,},
+                {type:"jewelcrafting", tier: "III", name: "steel necklace", amount:1,}]},
         ],
         IV:[
             {name:"cut pristine crystal", rarities:["epic"], requirements:[
@@ -326,29 +326,29 @@ export const crafts = {
                 {type:"mining", tier: "IV", name: "celestine ore", amount:1, raw: true}]},
             {name:"silver ring", rarities:["common","uncommon","rare","epic","legendary"], requirements:[
                 {type:"jewelcrafting", tier: "IV", name: "silver wire", amount:1, raw: true},
-                {type:"blacksmithing", tier: "IV", name: "silver ingot", amount:2, raw: false}]},
+                {type:"blacksmithing", tier: "IV", name: "silver ingot", amount:2,}]},
             {name:"silver earrings", rarities:["common","uncommon","rare","epic","legendary"], requirements:[
                 {type:"jewelcrafting", tier: "IV", name: "silver wire", amount:1, raw: true},
-                {type:"blacksmithing", tier: "IV", name: "silver ingot", amount:2, raw: false}]},
+                {type:"blacksmithing", tier: "IV", name: "silver ingot", amount:2,}]},
             {name:"silver necklace", rarities:["common","uncommon","rare","epic","legendary"], requirements:[
                 {type:"jewelcrafting", tier: "IV", name: "silver wire", amount:1, raw: true},
-                {type:"blacksmithing", tier: "IV", name: "silver ingot", amount:2, raw: false}]},
+                {type:"blacksmithing", tier: "IV", name: "silver ingot", amount:2,}]},
             //below this, rarity
             {name:"silver celestine ring", rarities:["uncommon","rare","epic","legendary"], requirements:[
-                {type:"jewelcrafting", tier: "IV", name: "cut celestine", amount:1, raw: false},
-                {type:"jewelcrafting", tier: "IV", name: "silver ring", amount:1, raw: false}]},
+                {type:"jewelcrafting", tier: "IV", name: "cut celestine", amount:1,},
+                {type:"jewelcrafting", tier: "IV", name: "silver ring", amount:1,}]},
             {name:"silver celestine earrings", rarities:["uncommon","rare","epic","legendary"], requirements:[
-                {type:"jewelcrafting", tier: "IV", name: "cut celestine", amount:1, raw: false},
-                {type:"jewelcrafting", tier: "IV", name: "silver earrings", amount:1, raw: false}]},
+                {type:"jewelcrafting", tier: "IV", name: "cut celestine", amount:1,},
+                {type:"jewelcrafting", tier: "IV", name: "silver earrings", amount:1,}]},
             {name:"silver celestine necklace", rarities:["uncommon","rare","epic","legendary"], requirements:[
-                {type:"jewelcrafting", tier: "IV", name: "cut celestine", amount:1, raw: false},
-                {type:"jewelcrafting", tier: "IV", name: "silver necklace", amount:1, raw: false}]},
+                {type:"jewelcrafting", tier: "IV", name: "cut celestine", amount:1,},
+                {type:"jewelcrafting", tier: "IV", name: "silver necklace", amount:1,}]},
             {name:"silver brilliant aquamarine ring", rarities:["rare","epic","legendary"], requirements:[
-                {type:"jewelcrafting", tier: "IV", name: "cut brilliant aquamarine", amount:1, raw: false},
-                {type:"jewelcrafting", tier: "IV", name: "silver ring", amount:1, raw: false}]},
+                {type:"jewelcrafting", tier: "IV", name: "cut brilliant aquamarine", amount:1,},
+                {type:"jewelcrafting", tier: "IV", name: "silver ring", amount:1,}]},
             {name:"silver pristine crystal earrings", rarities:["epic","legendary"], requirements:[
-                {type:"jewelcrafting", tier: "IV", name: "cut pristine crystal", amount:1, raw: false},
-                {type:"jewelcrafting", tier: "IV", name: "silver earrings", amount:1, raw: false}]},
+                {type:"jewelcrafting", tier: "IV", name: "cut pristine crystal", amount:1,},
+                {type:"jewelcrafting", tier: "IV", name: "silver earrings", amount:1,}]},
         ]
     }
 }

@@ -66,9 +66,11 @@ function createIngredientDiv(material, amount) {
     <span>x{amount}</span>
   </div>
 }
-{/*THIS USES searchRawMaterials, craftSearch*/}
-//recursive blueprint generator
-function createCraftBluePrint(type, tier, name, amount, rawFlag)
+/**recursive blueprint generator
+ * rawFlag default to false if undefined is passed(requirement that need a non-raw will not have a raw property) rawFlag would be false
+ * if true is passed(requirement that need a raw will have a raw property) rawFlag would be true
+ * */
+function createCraftBluePrint(type, tier, name, amount, rawFlag = false)
 {
   //in the event that the name is a raw material. the tier is not needed but it is in the requirements anyway
   //may need to add tier to raw material but i dont think that nessessary
@@ -83,7 +85,7 @@ function createCraftBluePrint(type, tier, name, amount, rawFlag)
     //query debug
     //console.log(type, tier, name)
     let material = craftSearch(type, tier, name)
-    const child = material.requirements.map(requirement => createCraftBluePrint(type = requirement.type, requirement.tier, requirement.name, amount * requirement.amount, requirement.raw))
+    const child = material.requirements.map(requirement => createCraftBluePrint(requirement.type, requirement.tier, requirement.name, amount * requirement.amount, requirement.raw))
     return <div className='steps'>
       {/* <div className="ingredients">
         <span>{craft.name}</span>
