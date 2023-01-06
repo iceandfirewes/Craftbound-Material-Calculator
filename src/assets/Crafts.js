@@ -273,16 +273,15 @@ export const crafts = {
             {name:"iron necklace", rarities:["common","uncommon","rare"], requirements:[
                 {type:"jewelcrafting", tier: "II", name: "iron chain", amount:1, raw: true},
                 {type:"blacksmithing", tier: "II", name: "iron ingot", amount:2,}]},
-            //FIRST PROBLEM. this need uncommon, rare ring but cant do that
             {name:"iron emerald ring", rarities:["uncommon","rare"], requirements:[
-                {type:"jewelcrafting", tier: "II", name: "iron ring", amount:1,},
-                {type:"jewelcrafting", tier: "II", name: "cut emerald", amount:1,}]},
+                {type:"jewelcrafting", tier: "II", name: "cut emerald", amount:1,},
+                {type:"jewelcrafting", tier: "II", rarities:["uncommon","rare"], name: "iron ring", amount:1,}]},
             {name:"iron emerald earrings", rarities:["uncommon","rare"], requirements:[
-                {type:"jewelcrafting", tier: "II", name: "iron earrings", amount:1,},
-                {type:"jewelcrafting", tier: "II", name: "cut emerald", amount:1,}]},
+                {type:"jewelcrafting", tier: "II", name: "cut emerald", amount:1,},
+                {type:"jewelcrafting", tier: "II", rarities:["uncommon","rare"], name: "iron earrings", amount:1,}]},
             {name:"iron emerald necklace", rarities:["uncommon","rare"], requirements:[
-                {type:"jewelcrafting", tier: "II", name: "iron necklace", amount:1,},
-                {type:"jewelcrafting", tier: "II", name: "cut emerald", amount:1,}]},
+                {type:"jewelcrafting", tier: "II", name: "cut emerald", amount:1,},
+                {type:"jewelcrafting", tier: "II", rarities:["uncommon","rare"], name: "iron necklace", amount:1,},]},      
         ],
         III:[
             {name:"cut amber", rarities:["uncommon"], requirements:[
@@ -300,19 +299,18 @@ export const crafts = {
             {name:"steel necklace", rarities:["common","uncommon","rare","epic"], requirements:[
                 {type:"jewelcrafting", tier: "III", name: "steel chain", amount:1, raw: true},
                 {type:"blacksmithing", tier: "III", name: "steel ingot", amount:2,}]},
-            //BELOW HERE RARITY
             {name:"steel amber ring", rarities:["uncommon","rare","epic"], requirements:[
                 {type:"jewelcrafting", tier: "III", name: "cut amber", amount:1,},
-                {type:"jewelcrafting", tier: "III", name: "steel ring", amount:1,}]},
+                {type:"jewelcrafting", rarities:["uncommon","rare","epic"], tier: "III", name: "steel ring", amount:1,}]},
             {name:"steel amber earrings", rarities:["uncommon","rare","epic"], requirements:[
                 {type:"jewelcrafting", tier: "III", name: "cut amber", amount:1,},
-                {type:"jewelcrafting", tier: "III", name: "steel earrings", amount:1,}]},
+                {type:"jewelcrafting", rarities:["uncommon","rare","epic"], tier: "III", name: "steel earrings", amount:1,}]},
             {name:"steel brilliant ruby ring", rarities:["rare","epic"], requirements:[
                 {type:"jewelcrafting", tier: "III", name: "cut brilliant ruby", amount:1,},
-                {type:"jewelcrafting", tier: "III", name: "steel ring", amount:1,}]},
+                {type:"jewelcrafting", rarities:["rare"], tier: "III", name: "steel ring", amount:1,}]},
             {name:"steel amber necklace", rarities:["uncommon","rare","epic"], requirements:[
                 {type:"jewelcrafting", tier: "III", name: "cut amber", amount:1,},
-                {type:"jewelcrafting", tier: "III", name: "steel necklace", amount:1,}]},
+                {type:"jewelcrafting", rarities:["uncommon","rare","epic"], tier: "III", name: "steel necklace", amount:1,}]},
         ],
         IV:[
             {name:"cut pristine crystal", rarities:["epic"], requirements:[
@@ -336,19 +334,19 @@ export const crafts = {
             //below this, rarity
             {name:"silver celestine ring", rarities:["uncommon","rare","epic","legendary"], requirements:[
                 {type:"jewelcrafting", tier: "IV", name: "cut celestine", amount:1,},
-                {type:"jewelcrafting", tier: "IV", name: "silver ring", amount:1,}]},
+                {type:"jewelcrafting", rarities:["uncommon","rare","epic","legendary"], tier: "IV", name: "silver ring", amount:1,}]},
             {name:"silver celestine earrings", rarities:["uncommon","rare","epic","legendary"], requirements:[
                 {type:"jewelcrafting", tier: "IV", name: "cut celestine", amount:1,},
-                {type:"jewelcrafting", tier: "IV", name: "silver earrings", amount:1,}]},
+                {type:"jewelcrafting", rarities:["uncommon","rare","epic","legendary"], tier: "IV", name: "silver earrings", amount:1,}]},
             {name:"silver celestine necklace", rarities:["uncommon","rare","epic","legendary"], requirements:[
                 {type:"jewelcrafting", tier: "IV", name: "cut celestine", amount:1,},
-                {type:"jewelcrafting", tier: "IV", name: "silver necklace", amount:1,}]},
+                {type:"jewelcrafting", rarities:["uncommon","rare","epic","legendary"], tier: "IV", name: "silver necklace", amount:1,}]},
             {name:"silver brilliant aquamarine ring", rarities:["rare","epic","legendary"], requirements:[
                 {type:"jewelcrafting", tier: "IV", name: "cut brilliant aquamarine", amount:1,},
-                {type:"jewelcrafting", tier: "IV", name: "silver ring", amount:1,}]},
+                {type:"jewelcrafting", rarities:["rare","epic","legendary"], tier: "IV", name: "silver ring", amount:1,}]},
             {name:"silver pristine crystal earrings", rarities:["epic","legendary"], requirements:[
                 {type:"jewelcrafting", tier: "IV", name: "cut pristine crystal", amount:1,},
-                {type:"jewelcrafting", tier: "IV", name: "silver earrings", amount:1,}]},
+                {type:"jewelcrafting", rarities:["epic","legendary"], tier: "IV", name: "silver earrings", amount:1,}]},
         ]
     }
 }

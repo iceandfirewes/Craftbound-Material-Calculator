@@ -58,19 +58,26 @@ export default function Calculator()
         <div className="materialRarity"></div>
   </section>
 }
-function createIngredientDiv(material, amount) {
+function createIngredientDiv(material, amount, raritiesRequest) {
+  //decide which rarity to use. the item ornate rarity or the request rarity from a parent craft
+  const rarities = raritiesRequest == undefined ? material.rarities : raritiesRequest
   return <div className="ingredients">
     {/*material color to name to amount*/}
     <div>{material.name}</div>
     <div>x{amount}</div>
-    {material.rarities.map(rarity => (<span className="rarity" style={{backgroundColor: rarityColor[rarity]}}/>))}
+    {rarities.map(rarity => (<span className="rarity" style={{backgroundColor: rarityColor[rarity]}}/>))}
   </div>
 }
 /**recursive blueprint generator
- * rawFlag default to false if undefined is passed(requirement that need a non-raw will not have a raw property) rawFlag would be false
- * if true is passed(requirement that need a raw will have a raw property) rawFlag would be true
+ *  rawFlag
+ *    + default to false if undefined is passed(requirement that need a non-raw will not have a raw property) rawFlag would be false
+*     + if true is passed(requirement that need a raw will have a raw property) rawFlag would be true
+ *  raritiesRequest is for craft that want to override a material rarity. for example, if an item is uncommon -> legendary but 
+ *  the craft only want rare -> legendary
+ *    +default to undefined. most craft does not have a rarities field in their requirement object aside from jw
+ *    +if passed down to createIngrediantDiv, it will either be undefined OR ["common","uncommon",...]
  * */
-function createCraftBluePrint(type, tier, name, amount, rawFlag = false)
+function createCraftBluePrint(type, tier, name, amount, rawFlag = false, raritiesRequest = undefined)
 {
   //in the event that the name is a raw material. the tier is not needed but it is in the requirements anyway
   //may need to add tier to raw material but i dont think that nessessary
@@ -79,19 +86,15 @@ function createCraftBluePrint(type, tier, name, amount, rawFlag = false)
     //query debug
     //console.log(type, name)
     const material = searchRawMaterials(type, name)
-    return createIngredientDiv(material, amount)
+    return createIngredientDiv(material, amount, raritiesRequest)
   }
   else{
     //query debug
     //console.log(type, tier, name)
     let material = craftSearch(type, tier, name)
-    const child = material.requirements.map(requirement => createCraftBluePrint(requirement.type, requirement.tier, requirement.name, amount * requirement.amount, requirement.raw))
+    const child = material.requirements.map(requirement => createCraftBluePrint(requirement.type, requirement.tier, requirement.name, amount * requirement.amount, requirement.raw, requirement.rarities))
     return <div className='steps'>
-      {/* <div className="ingredients">
-        <span>{craft.name}</span>
-        <span>x{amount}</span>
-      </div> */}
-      {createIngredientDiv(material, amount)}
+      {createIngredientDiv(material, amount, raritiesRequest)}
       <div>{child}</div>
     </div>
   }
