@@ -8,44 +8,79 @@ export const rarityColor = {
 }
 const raw_materials = {
     skinning:[
+        //TIER 1
         {name: "raw hide", rarities: ["common"]},
+        //TIER 2
         {name:"light hide", rarities: ["common"]},
+        {name:"fox pelt", rarities: ["rare"]},
+        //TIER 3
         {name:"heavy hide", rarities: ["common"]},
+        {name:"basilisk scale", rarities: ["uncommon"]},
+        //TIER 4
         {name:"rugged hide",rarities:["common"]},
-
+        {name:"shimmering scale", rarities: ["uncommon"]},
+        {name:"polar bear pelt", rarities: ["epic"]},
+    ],
+    mining:[
+        //TIER 1
+        {name: "copper ore", rarities: ["common"]},
+        //TIER 2
+        {name: "iron ore", rarities: ["common"]},
+        {name:"emerald ore", rarities: ["uncommon"]},
+        //TIER 3
+        {name: "coal", rarities: ["common"]},
+        {name:"amber ore", rarities: ["uncommon"]},
+        {name:"brilliant ruby ore", rarities: ["rare"]},
+        //TIER 4
+        {name: "silver ore", rarities: ["common"]},
+        {name:"celestine ore", rarities: ["uncommon"]},
+        {name:"brilliant aquamarine ore", rarities: ["rare"]},
+        {name:"pristine crystal ore", rarities: ["epic"]},
+    ],
+    logging:[
+        //TIER 1
+        {name:"beech log", rarities: ["common"]},
+        {name:"beech tree sap", rarities: ["uncommon"]},
+        //TIER 2
+        {name:"pine log", rarities: ["common"]},
+        {name:"pine tree sap", rarities: ["uncommon"]},
+        //TIER 3
+        {name:"oak log", rarities: ["common"]},
+        {name:"oak tree sap", rarities: ["uncommon"]},
+        //TIER 4
+        {name:"birch log", rarities: ["common"]},
+        {name:"birch tree sap", rarities: ["uncommon"]},
+        {name:"elfwood", rarities: ["epic"]},
+    ],
+    harvesting:[
+        //TIER 1
+        {name:"fiber", rarities: ["common"]},
+        {name:"flint", rarities: ["common"]},
+        //TIER 2
+        {name:"cotton", rarities: ["common"]},
+        {name:"silverleaf", rarities: ["uncommon"]},
+        //TIER 3
+        {name:"hemp", rarities: ["common"]},
+        {name:"deadleaf", rarities: ["uncommon"]},
+        {name:"petrified root", rarities: ["rare"]},
+        //TIER 4
+        {name:"silkweed",rarities:["common"]},
+        {name:"frostleaf", rarities: ["uncommon"]},
     ],
     leatherworking:[        
         {name:"tannin", rarities: ["common"]},
         {name:"rested tannin", rarities: ["common"]},
         {name:"aged tannin",rarities:["common"]}
     ],
-    mining:[
-        {name: "copper ore", rarities: ["common"]},
-        {name: "iron ore", rarities: ["common"]},
-        {name: "coal", rarities: ["common"]},
-        {name: "silver ore", rarities: ["common"]},
-    ],
     blacksmithing:[
         {name: "sand flux", rarities: ["common"]},
         {name: "limestone flux", rarities: ["common"]},
         {name: "liquid flux", rarities: ["common"]},
     ],
-    harvesting:[
-        {name:"fiber", rarities: ["common"]},
-        {name:"cotton", rarities: ["common"]},
-        {name:"hemp", rarities: ["common"]},
-        {name:"silkweed",rarities:["common"]},
-    ],
     tailoring:[
         {name:"coarse thread", rarities: ["common"]},
         {name:"fine thread", rarities: ["common"]},
         {name:"silken thread",rarities:["common"]}
-    ],
-    logging:[
-        {name:"beech log", rarities: ["common"]},
-        {name:"pine log", rarities: ["common"]},
-        {name:"oak log", rarities: ["common"]},
-        {name:"birch log", rarities: ["common"]},
     ],
     woodworking:[
         {name:"coarse sandpaper", rarities: ["common"]},
@@ -59,20 +94,15 @@ const raw_materials = {
         {name:"bronze chain", rarities: ["common"]},
         //T2
         {name:"weak solvent", rarities: ["common"]},
-        {name:"emerald ore", rarities: ["uncommon"]},
         {name:"iron wire", rarities: ["common"]},
         {name:"iron chain", rarities: ["common"]},
         //T3
-        {name:"amber ore", rarities: ["uncommon"]},
         {name:"potent solvent", rarities: ["common"]},
-        {name:"brilliant ruby ore", rarities: ["rare"]},
         {name:"steel wire", rarities: ["common"]},
         {name:"steel chain", rarities: ["common"]},
         {name:"flint", rarities: ["common"]},
         //T4
         {name:"pure solvent", rarities: ["common"]},
-        {name:"pristine crystal ore", rarities: ["epic"]},
-        {name:"brilliant aquamarine ore", rarities: ["rare"]},
         {name:"silver wire", rarities: ["common"]},
     ]
 }
