@@ -54,8 +54,9 @@ export default function Calculator()
               {crafts[craftOption.type][craftOption.tier].map(craft => (craft.hasOwnProperty("requirements") ? <option value={craft.name}>{craft.name}</option> : undefined))}
             </select>
         </div>
-        {createCraftBluePrint(craftOption.type, craftOption.tier, craftOption.name, craftOption.amount, false)}
-        <div className="materialRarity"></div>
+        <div className="calculator--display">
+          {createCraftBluePrint(craftOption.type, craftOption.tier, craftOption.name, craftOption.amount, false)}
+        </div>
   </section>
 }
 function createIngredientDiv(material, amount, raritiesRequest) {
