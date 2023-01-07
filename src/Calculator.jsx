@@ -3,12 +3,15 @@ import { useState } from "react"
 export default function Calculator()
 {
     //console.log(testRecursiveCraftBlueprint("leatherworking","coarse leather boots",false))
-    const [craftOption, setcraftOption] = useState({type:"leatherworking", tier:"I", name:"coarse leather", amount:1})
+    const [craftOption, setcraftOption] = useState(() => {
+      const tempCraftOption = localStorage.getItem("craftOption")
+      return tempCraftOption ? JSON.parse(tempCraftOption) : {type:"leatherworking", tier:"I", name:"coarse leather", amount:1}
+    })
     //main function to handle user input
     function handleOptionChange(event)
     {
       setcraftOption(oldCraftOption => {
-        return {
+        const newCraftOption = {
           ...oldCraftOption,
           //this is for changing the amount textbox
           [event.target.name]: event.target.value,
@@ -38,6 +41,8 @@ export default function Calculator()
             }
           }())
         }
+        localStorage.setItem("craftOption", JSON.stringify(newCraftOption))
+        return newCraftOption
       })
     }   
     return <section className="calculator">
