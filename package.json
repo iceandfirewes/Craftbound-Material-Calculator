@@ -1,5 +1,4 @@
 {
-  "homepage": "https://iceandfirewes.github.io/craftbound-material-calculator",
   "name": "craftbound-material-calculator",
   "private": true,
   "version": "0.0.0",
@@ -11,6 +10,7 @@
     "build": "vite build",
     "preview": "vite preview"
   },
+  "homepage": "https://iceandfirewes.github.io/craftbound-material-calculator",
   "dependencies": {
     "gh-pages": "^4.0.0",
     "react": "^18.2.0",
