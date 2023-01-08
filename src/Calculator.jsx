@@ -45,24 +45,23 @@ export default function Calculator()
         return newCraftOption
       })
     }   
-    return <section className="calculator">
-        {/*THIS USES CRAFTS OBJECTS*/}
-        <div className="calculator--option">
-            <select name="type" onChange={(event) => handleOptionChange(event)} value={craftOption.type}>
-              {Object.getOwnPropertyNames(crafts).map(profession => <option value={profession}>{profession}</option>)}
-            </select>
-            <select name="tier" onChange={(event) => handleOptionChange(event)} value={craftOption.tier}>
-              {Object.getOwnPropertyNames(crafts[craftOption.type]).map(tier => <option value={tier}>{tier}</option>)}
-            </select>
-            <input name="amount" className="option--amount" type="text" value={craftOption.amount} onChange={(event) => handleOptionChange(event)}></input>
-            <select name="name" onChange={(event) => handleOptionChange(event)} value={craftOption.name}>
-              {crafts[craftOption.type][craftOption.tier].map(craft => (craft.hasOwnProperty("requirements") ? <option value={craft.name}>{craft.name}</option> : undefined))}
-            </select>
-        </div>
-        <div className="calculator--display">
-          {createCraftBluePrint(craftOption.type, craftOption.tier, craftOption.name, craftOption.amount, false)}
-        </div>
-  </section>
+    return <>
+      <div className="calculator--option">
+        <select name="type" onChange={(event) => handleOptionChange(event)} value={craftOption.type}>
+          {Object.getOwnPropertyNames(crafts).map(profession => <option value={profession}>{profession}</option>)}
+        </select>
+        <select name="tier" onChange={(event) => handleOptionChange(event)} value={craftOption.tier}>
+          {Object.getOwnPropertyNames(crafts[craftOption.type]).map(tier => <option value={tier}>{tier}</option>)}
+        </select>
+        <input name="amount" className="option--amount" type="text" value={craftOption.amount} onChange={(event) => handleOptionChange(event)}></input>
+        <select name="name" onChange={(event) => handleOptionChange(event)} value={craftOption.name}>
+          {crafts[craftOption.type][craftOption.tier].map(craft => (craft.hasOwnProperty("requirements") ? <option value={craft.name}>{craft.name}</option> : undefined))}
+        </select>
+      </div>
+      <div className="calculator--display">
+        {createCraftBluePrint(craftOption.type, craftOption.tier, craftOption.name, craftOption.amount, false)}
+      </div>
+    </>
 }
 function createIngredientDiv(material, amount, raritiesRequest) {
   /**decide which rarity to use. the item ornate rarity or the request rarity from a parent craft

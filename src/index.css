@@ -20,7 +20,17 @@
 .App > h1 {
 text-align: center;
 }
-.calculator {
+.calculator--option {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  gap: .5em;
+}
+.calculator--display {
+  position:absolute;
+  left:50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
   width: 100%;
   align-items: center;
   display: flex;
