@@ -65,13 +65,31 @@ export default function Calculator()
   </section>
 }
 function createIngredientDiv(material, amount, raritiesRequest) {
-  //decide which rarity to use. the item ornate rarity or the request rarity from a parent craft
-  const rarities = raritiesRequest == undefined ? material.rarities : raritiesRequest
+  /**decide which rarity to use. the item ornate rarity or the request rarity from a parent craft
+   *  + if there's no rarityRequest do the circle as usual
+   *  + if there is, need to display an arrow with the circle excluding the first circle
+   * */
+  let raritiesDisplay
+  if(raritiesRequest != undefined)
+  {
+    const [, ...raritiesRequestExceptFirst] = raritiesRequest
+    raritiesDisplay = <>
+      <i className="rarityRequestArrow" style={{borderColor:rarityColor[raritiesRequest[0]]}}></i>
+      {raritiesRequestExceptFirst.map(rarity => (<span className="rarity" style={{backgroundColor: rarityColor[rarity]}}/>))}
+    </>
+  }
+  else
+  {
+    raritiesDisplay = <>
+      {material.rarities.map(rarity => (<span className="rarity" style={{backgroundColor: rarityColor[rarity]}}/>))}  
+    </>
+  }
   return <div className="ingredients">
     {/*material color to name to amount*/}
     <div>{material.name}</div>
     <div>x{amount}</div>
-    {rarities.map(rarity => (<span className="rarity" style={{backgroundColor: rarityColor[rarity]}}/>))}
+    {/*rarities.map(rarity => (<span className="rarity" style={{backgroundColor: rarityColor[rarity]}}/>))*/}
+    {raritiesDisplay}
   </div>
 }
 /**recursive blueprint generator
@@ -102,6 +120,7 @@ function createCraftBluePrint(type, tier, name, amount, rawFlag = false, raritie
     return <div className='steps'>
       {createIngredientDiv(material, amount, raritiesRequest)}
       <div>{child}</div>
+      
     </div>
   }
 }

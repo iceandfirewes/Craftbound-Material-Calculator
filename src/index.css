@@ -37,8 +37,16 @@ text-align: center;
   display: flex;
 }
 .rarity {
-  margin-top: 8px;
+  margin-top: .5em;
   width: .5em;
   height: .5em;
   border-radius: 50%;
+}
+.rarityRequestArrow {
+  margin-top: .6em;
+  border: solid white;
+  border-width: 0 .1em .1em 0;
+  width: .2em;
+  height: .2em;
+  transform: rotate(-135deg); 
 }
