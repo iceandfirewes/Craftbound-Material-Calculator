@@ -1,16 +1,15 @@
 {
-  "name": "craftbound-material-calculator",
+  "name": "Craftbound-Material-Calculator",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
-  "homepage": "https://iceandfirewes.github.io/craftbound-material-calculator",
+  "homepage": "https://iceandfirewes.github.io/Craftbound-Material-Calculator",
   "dependencies": {
     "gh-pages": "^4.0.0",
     "react": "^18.2.0",
