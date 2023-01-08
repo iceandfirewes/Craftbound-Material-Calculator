@@ -10,11 +10,14 @@ export default function Calculator()
     //main function to handle user input
     function handleOptionChange(event)
     {
+      //lowercase just in case
+      event.target.value = event.target.value.toLowerCase()
       setcraftOption(oldCraftOption => {
         const newCraftOption = {
           ...oldCraftOption,
           //this is for changing the amount textbox
-          [event.target.name]: !isNaN(event.target.value) && event.target.name == "amount"?  event.target.value : oldCraftOption.amount,
+          //!isNaN(event.target.value) && event.target.name == "amount"?  event.target.value : oldCraftOption.amount this cause crash bug
+          [event.target.name]: event.target.value,
           /**
            * The reason for this is there're 3 cases where a name would need to be updated. 
            *  if it a tier change, the name need to update to the first object of the same type in the new tier
@@ -48,20 +51,28 @@ export default function Calculator()
     return <>
       <div className="calculator--option">
         <select name="type" onChange={(event) => handleOptionChange(event)} value={craftOption.type}>
-          {Object.getOwnPropertyNames(crafts).map(profession => <option value={profession}>{profession}</option>)}
+          {Object.getOwnPropertyNames(crafts).map(profession => <option value={profession}>{capitalizeEveryWord(profession)}</option>)}
         </select>
         <select name="tier" onChange={(event) => handleOptionChange(event)} value={craftOption.tier}>
           {Object.getOwnPropertyNames(crafts[craftOption.type]).map(tier => <option value={tier}>{tier}</option>)}
         </select>
         <input name="amount" className="option--amount" type="text" value={craftOption.amount} onChange={(event) => handleOptionChange(event)}></input>
         <select name="name" onChange={(event) => handleOptionChange(event)} value={craftOption.name}>
-          {crafts[craftOption.type][craftOption.tier].map(craft => (craft.hasOwnProperty("requirements") ? <option value={craft.name}>{craft.name}</option> : undefined))}
+          {crafts[craftOption.type][craftOption.tier].map(craft => (craft.hasOwnProperty("requirements") ? <option value={craft.name}>{capitalizeEveryWord(craft.name)}</option> : undefined))}
         </select>
       </div>
       <div className="calculator--display">
         {createCraftBluePrint(craftOption.type, craftOption.tier, craftOption.name, craftOption.amount, false)}
       </div>
     </>
+}
+function capitalizeEveryWord(string)
+{
+  const arr = string.split(" ");
+for (var i = 0; i < arr.length; i++) {
+    arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+  }
+  return arr.join(" ");
 }
 function createIngredientDiv(material, amount, raritiesRequest) {
   /**decide which rarity to use. the item ornate rarity or the request rarity from a parent craft
@@ -85,7 +96,7 @@ function createIngredientDiv(material, amount, raritiesRequest) {
   }
   return <div className="ingredients">
     {/*material color to name to amount*/}
-    <div>{material.name}</div>
+    <div>{capitalizeEveryWord(material.name)}</div>
     <div className="ingredients--amount">x{amount}</div>
     {raritiesDisplay}
   </div>
