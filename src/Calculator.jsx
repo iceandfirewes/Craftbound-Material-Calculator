@@ -74,7 +74,7 @@ function createIngredientDiv(material, amount, raritiesRequest) {
   {
     const [, ...raritiesRequestExceptFirst] = raritiesRequest
     raritiesDisplay = <>
-      <i className="rarityRequestArrow" style={{borderColor:rarityColor[raritiesRequest[0]]}}></i>
+      <span className="rarityRequestArrow" style={{borderColor:rarityColor[raritiesRequest[0]]}}></span>
       {raritiesRequestExceptFirst.map(rarity => (<span className="rarity" style={{backgroundColor: rarityColor[rarity]}}/>))}
     </>
   }
@@ -87,8 +87,7 @@ function createIngredientDiv(material, amount, raritiesRequest) {
   return <div className="ingredients">
     {/*material color to name to amount*/}
     <div>{material.name}</div>
-    <div>x{amount}</div>
-    {/*rarities.map(rarity => (<span className="rarity" style={{backgroundColor: rarityColor[rarity]}}/>))*/}
+    <div className="ingredients--amount">x{amount}</div>
     {raritiesDisplay}
   </div>
 }

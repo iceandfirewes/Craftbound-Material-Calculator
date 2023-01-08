@@ -36,11 +36,9 @@ text-align: center;
 .ingredients {
   display: flex;
 }
-.rarity {
-  margin-top: .5em;
-  width: .5em;
-  height: .5em;
-  border-radius: 50%;
+.ingredients--amount {
+  margin-left: .3em;
+  margin-right: .3em;
 }
 .rarityRequestArrow {
   margin-top: .6em;
@@ -49,4 +47,10 @@ text-align: center;
   width: .2em;
   height: .2em;
   transform: rotate(-135deg); 
+}
+.rarity {
+  margin-top: .5em;
+  width: .5em;
+  height: .5em;
+  border-radius: 50%;
 }
