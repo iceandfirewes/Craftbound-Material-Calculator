@@ -14,7 +14,7 @@ export default function Calculator()
         const newCraftOption = {
           ...oldCraftOption,
           //this is for changing the amount textbox
-          [event.target.name]: event.target.value,
+          [event.target.name]: !isNaN(event.target.value) && event.target.name == "amount"?  event.target.value : oldCraftOption.amount,
           /**
            * The reason for this is there're 3 cases where a name would need to be updated. 
            *  if it a tier change, the name need to update to the first object of the same type in the new tier
