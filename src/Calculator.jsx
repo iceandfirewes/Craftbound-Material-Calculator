@@ -10,8 +10,6 @@ export default function Calculator()
     //main function to handle user input
     function handleOptionChange(event)
     {
-      //lowercase just in case
-      event.target.value = event.target.value.toLowerCase()
       setcraftOption(oldCraftOption => {
         const newCraftOption = {
           ...oldCraftOption,
@@ -28,15 +26,18 @@ export default function Calculator()
           name: (function(){
             if (event.target.name == "tier")
             {
+              console.log(event.target.value)
               return crafts[oldCraftOption.type][event.target.value][0].name
             } 
             else if(event.target.name == "type")
             {
-              return crafts[event.target.value][oldCraftOption.tier][0].name
+              //toLowerCase because type value is capitalized
+              return crafts[event.target.value.toLowerCase()][oldCraftOption.tier][0].name
             }
             else if(event.target.name == "name")
             {
-              return event.target.value
+              //toLowerCase because name value is capitalized
+              return event.target.value.toLowerCase()
             }
             else if(event.target.name == "amount")
             {
