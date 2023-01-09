@@ -1,5 +1,3 @@
-import { useState } from 'react'
-import  {crafts, craftSearch} from "./assets/Crafts.js"
 import Calculator from './Calculator.jsx'
 function App() {
   return (
