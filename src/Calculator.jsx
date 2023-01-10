@@ -43,12 +43,21 @@ export default function Calculator()
             {
               return oldCraftOption.name
             }
-          }())
+          }())  
         }
         localStorage.setItem("craftOption", JSON.stringify(newCraftOption))
         return newCraftOption
       })
+    }
+    const [isHovered, setIsHovered] = useState(false)
+    function handleIngredientMouseOver(event)
+    {
+      setIsHovered(true)
     }   
+    function handleIngredientMouseOut(event)
+    {
+      setIsHovered(false)
+    } 
     return <>
       <div className="calculator--option">
         <select name="type" onChange={(event) => handleOptionChange(event)} value={craftOption.type}>
@@ -66,68 +75,80 @@ export default function Calculator()
         {createCraftBluePrint(craftOption.type, craftOption.tier, craftOption.name, craftOption.amount, false)}
       </div>
     </>
+    function createIngredientDiv(material, amount, raritiesRequest) {
+      /**decide which rarity to use. the item ornate rarity or the request rarity from a parent craft
+       *  + if there's no rarityRequest do the circle as usual
+       *  + if there is, need to display an arrow with the circle excluding the first circle
+       * */
+      let raritiesDisplay
+      if(raritiesRequest != undefined)
+      {
+        const [, ...raritiesRequestExceptFirst] = raritiesRequest
+        raritiesDisplay = <>
+          <span className="rarityRequestArrow" style={{borderColor:rarityColor[raritiesRequest[0]]}}></span>
+          {raritiesRequestExceptFirst.map(rarity => (<span className="rarity" style={{backgroundColor: rarityColor[rarity]}}/>))}
+        </>
+      }
+      else
+      {
+        raritiesDisplay = <>
+          {material.rarities.map(rarity => (<span className="rarity" style={{backgroundColor: rarityColor[rarity]}}/>))}  
+        </>
+      }
+      return <div className="ingredient--NAR">
+        {/*material color to name to amount*/}
+        <div>{capitalizeEveryWord(material.name)}</div>
+        <div className="ingredients--amount">x{amount}</div>
+        {raritiesDisplay}
+      </div>
+    }    
+    /**recursive blueprint generator
+     * rawFlag
+     * + default to false if undefined is passed(requirement that need a non-raw will not have a raw property) rawFlag would be false
+     * + if true is passed(requirement that need a raw will have a raw property) rawFlag would be true
+     * raritiesRequest is for craft that want to override a material rarity. for example, if an item is uncommon -> legendary but 
+     * the craft only want rare -> legendary
+     * + default to undefined. most craft does not have a rarities field in their requirement object aside from jw
+    *  +if passed down to createIngrediantDiv, it will either be undefined OR ["common","uncommon",...]
+  * */
+    function createCraftBluePrint(type, tier, name, amount, rawFlag = false, raritiesRequest = undefined)
+    {
+      //in the event that the name is a raw material. the tier is not needed but it is in the requirements anyway
+      //may need to add tier to raw material but i dont think that nessessary
+      if(rawFlag)
+      {
+        //console.log(type, name)
+        const material = searchRawMaterials(type, name)
+        return createIngredientDiv(material, amount, raritiesRequest)
+      }
+      else{
+        //console.log(type, tier, name)
+        let material = craftSearch(type, tier, name)
+        //
+        let testPRYD = [0,0,0,0]
+        if(material.hasOwnProperty("PRYD"))
+        {
+          testPRYD = material.PRYD
+        }
+        //
+        const child = material.requirements.map(requirement => createCraftBluePrint(requirement.type, requirement.tier, requirement.name, amount * requirement.amount, requirement.raw, requirement.rarities))
+        return <div className='steps'>
+          <div className="ingredient" onMouseOver={(event) => handleIngredientMouseOver(event)} onMouseOut={(event) => handleIngredientMouseOut(event)}>
+            {isHovered && <div className="ingredient--PRYD">
+              {testPRYD.map(value => (<div>{value}</div>))}
+            </div>}
+            {createIngredientDiv(material, amount, raritiesRequest)}
+          </div>
+          <div>{child}</div>
+        </div>
+      }
+    }
 }
 function capitalizeEveryWord(string)
 {
   const arr = string.split(" ");
-for (var i = 0; i < arr.length; i++) {
+  for (var i = 0; i < arr.length; i++) {
     arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
   }
   return arr.join(" ");
-}
-function createIngredientDiv(material, amount, raritiesRequest) {
-  /**decide which rarity to use. the item ornate rarity or the request rarity from a parent craft
-   *  + if there's no rarityRequest do the circle as usual
-   *  + if there is, need to display an arrow with the circle excluding the first circle
-   * */
-  let raritiesDisplay
-  if(raritiesRequest != undefined)
-  {
-    const [, ...raritiesRequestExceptFirst] = raritiesRequest
-    raritiesDisplay = <>
-      <span className="rarityRequestArrow" style={{borderColor:rarityColor[raritiesRequest[0]]}}></span>
-      {raritiesRequestExceptFirst.map(rarity => (<span className="rarity" style={{backgroundColor: rarityColor[rarity]}}/>))}
-    </>
-  }
-  else
-  {
-    raritiesDisplay = <>
-      {material.rarities.map(rarity => (<span className="rarity" style={{backgroundColor: rarityColor[rarity]}}/>))}  
-    </>
-  }
-  return <div className="ingredients">
-    {/*material color to name to amount*/}
-    <div>{capitalizeEveryWord(material.name)}</div>
-    <div className="ingredients--amount">x{amount}</div>
-    {raritiesDisplay}
-  </div>
-}
-/**recursive blueprint generator
- *  rawFlag
- *    + default to false if undefined is passed(requirement that need a non-raw will not have a raw property) rawFlag would be false
-*     + if true is passed(requirement that need a raw will have a raw property) rawFlag would be true
- *  raritiesRequest is for craft that want to override a material rarity. for example, if an item is uncommon -> legendary but 
- *  the craft only want rare -> legendary
- *    +default to undefined. most craft does not have a rarities field in their requirement object aside from jw
- *    +if passed down to createIngrediantDiv, it will either be undefined OR ["common","uncommon",...]
- * */
-function createCraftBluePrint(type, tier, name, amount, rawFlag = false, raritiesRequest = undefined)
-{
-  //in the event that the name is a raw material. the tier is not needed but it is in the requirements anyway
-  //may need to add tier to raw material but i dont think that nessessary
-  if(rawFlag)
-  {
-    //console.log(type, name)
-    const material = searchRawMaterials(type, name)
-    return createIngredientDiv(material, amount, raritiesRequest)
-  }
-  else{
-    //console.log(type, tier, name)
-    let material = craftSearch(type, tier, name)
-    const child = material.requirements.map(requirement => createCraftBluePrint(requirement.type, requirement.tier, requirement.name, amount * requirement.amount, requirement.raw, requirement.rarities))
-    return <div className='steps'>
-      {createIngredientDiv(material, amount, raritiesRequest)}
-      <div>{child}</div>
-    </div>
-  }
 }
