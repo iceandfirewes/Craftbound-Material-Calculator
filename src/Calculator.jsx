@@ -1,5 +1,5 @@
 import  {rarityColor, crafts, craftSearch, searchRawMaterials} from "./assets/Crafts.js"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 export default function Calculator()
 {
     //console.log(testRecursiveCraftBlueprint("leatherworking","coarse leather boots",false))
@@ -26,7 +26,6 @@ export default function Calculator()
           name: (function(){
             if (event.target.name == "tier")
             {
-              console.log(event.target.value)
               return crafts[oldCraftOption.type][event.target.value][0].name
             } 
             else if(event.target.name == "type")
@@ -49,15 +48,6 @@ export default function Calculator()
         return newCraftOption
       })
     }
-    const [isHovered, setIsHovered] = useState(false)
-    function handleIngredientMouseOver(event)
-    {
-      setIsHovered(true)
-    }   
-    function handleIngredientMouseOut(event)
-    {
-      setIsHovered(false)
-    } 
     return <>
       <div className="calculator--option">
         <select name="type" onChange={(event) => handleOptionChange(event)} value={craftOption.type}>
@@ -125,16 +115,13 @@ export default function Calculator()
         //console.log(type, tier, name)
         let material = craftSearch(type, tier, name)
         //
-        let testPRYD = [0,0,0,0]
-        if(material.hasOwnProperty("PRYD"))
-        {
-          testPRYD = material.PRYD
-        }
+        const testPRYD = material.hasOwnProperty("PRYD") ? material.PRYD : [0,0,0,0]
+        const [isHover, setIsHovered] = useState(false)
         //
         const child = material.requirements.map(requirement => createCraftBluePrint(requirement.type, requirement.tier, requirement.name, amount * requirement.amount, requirement.raw, requirement.rarities))
         return <div className='steps'>
-          <div className="ingredient" onMouseOver={(event) => handleIngredientMouseOver(event)} onMouseOut={(event) => handleIngredientMouseOut(event)}>
-            {isHovered && <div className="ingredient--PRYD">
+          <div className="ingredient"onMouseOver={() => {setIsHovered(true)}} onMouseOut={() => {setIsHovered(false)}}>
+            {isHover && <div className="ingredient--PRYD">
               {testPRYD.map(value => (<div>{value}</div>))}
             </div>}
             {createIngredientDiv(material, amount, raritiesRequest)}
