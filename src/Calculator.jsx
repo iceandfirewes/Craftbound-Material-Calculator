@@ -64,6 +64,7 @@ export default function Calculator()
       <div className="calculator--display">
         {createCraftBluePrint(craftOption.type, craftOption.tier, craftOption.name, craftOption.amount, false)}
       </div>
+      <div className="update">1/11 - add functionality to display Progress, Quality, Durability and Yield</div>
     </>
     function createIngredientDiv(material, amount, raritiesRequest) {
       /**decide which rarity to use. the item ornate rarity or the request rarity from a parent craft
@@ -115,7 +116,7 @@ export default function Calculator()
         //console.log(type, tier, name)
         let material = craftSearch(type, tier, name)
         //
-        const testPRYD = material.hasOwnProperty("PRYD") ? material.PRYD : [0,0,0,0]
+        const testPRYD = material.hasOwnProperty("PRYD") ? material.PRYD : ["?","?","?","?"]
         const [isHover, setIsHovered] = useState(false)
         //
         const child = material.requirements.map(requirement => createCraftBluePrint(requirement.type, requirement.tier, requirement.name, amount * requirement.amount, requirement.raw, requirement.rarities))

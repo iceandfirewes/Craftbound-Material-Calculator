@@ -73,3 +73,9 @@ text-align: center;
   height: .5em;
   border-radius: 50%;
 }
+
+.update {
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+}
