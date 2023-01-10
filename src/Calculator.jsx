@@ -117,20 +117,17 @@ function createCraftBluePrint(type, tier, name, amount, rawFlag = false, raritie
   //may need to add tier to raw material but i dont think that nessessary
   if(rawFlag)
   {
-    //query debug
     //console.log(type, name)
     const material = searchRawMaterials(type, name)
     return createIngredientDiv(material, amount, raritiesRequest)
   }
   else{
-    //query debug
     //console.log(type, tier, name)
     let material = craftSearch(type, tier, name)
     const child = material.requirements.map(requirement => createCraftBluePrint(requirement.type, requirement.tier, requirement.name, amount * requirement.amount, requirement.raw, requirement.rarities))
     return <div className='steps'>
       {createIngredientDiv(material, amount, raritiesRequest)}
       <div>{child}</div>
-      
     </div>
   }
 }
