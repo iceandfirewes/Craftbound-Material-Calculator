@@ -1,5 +1,5 @@
 import  {rarityColor, crafts, craftSearch, searchRawMaterials} from "./assets/Crafts.js"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 export default function Calculator()
 {
     //console.log(testRecursiveCraftBlueprint("leatherworking","coarse leather boots",false))
@@ -9,6 +9,13 @@ export default function Calculator()
     })
     const [isHovered, setIsHovered] = useState([])
     //main function to handle user input
+    return <>
+      {createOptionDiv()}
+      <div className="calculator--display">
+        {createCraftBluePrint(craftOption.type, craftOption.tier, craftOption.name, craftOption.amount, false)}
+      </div>
+      {/* <div className="update">1/11 - add functionality to display Progress, Quality, Durability and Yield</div> */}
+    </>
     function handleOptionChange(event)
     {
       setIsHovered([])
@@ -50,24 +57,21 @@ export default function Calculator()
         return newCraftOption
       })
     }
-    return <>
-      <div className="calculator--option">
-        <select name="type" onChange={(event) => handleOptionChange(event)} value={craftOption.type}>
-          {Object.getOwnPropertyNames(crafts).map(profession => <option value={profession}>{capitalizeEveryWord(profession)}</option>)}
-        </select>
-        <select name="tier" onChange={(event) => handleOptionChange(event)} value={craftOption.tier}>
-          {Object.getOwnPropertyNames(crafts[craftOption.type]).map(tier => <option value={tier}>{tier}</option>)}
-        </select>
-        <input name="amount" className="option--amount" type="text" value={craftOption.amount} onChange={(event) => handleOptionChange(event)}></input>
-        <select name="name" onChange={(event) => handleOptionChange(event)} value={craftOption.name}>
-          {crafts[craftOption.type][craftOption.tier].map(craft => (craft.hasOwnProperty("requirements") ? <option value={craft.name}>{capitalizeEveryWord(craft.name)}</option> : undefined))}
-        </select>
-      </div>
-      <div className="calculator--display">
-        {createCraftBluePrint(craftOption.type, craftOption.tier, craftOption.name, craftOption.amount, false)}
-      </div>
-      {/* <div className="update">1/11 - add functionality to display Progress, Quality, Durability and Yield</div> */}
-    </>
+    function createOptionDiv()
+    {
+      return <div className="calculator--option">
+      <select name="type" onChange={(event) => handleOptionChange(event)} value={craftOption.type}>
+        {Object.getOwnPropertyNames(crafts).map(profession => <option value={profession}>{capitalizeEveryWord(profession)}</option>)}
+      </select>
+      <select name="tier" onChange={(event) => handleOptionChange(event)} value={craftOption.tier}>
+        {Object.getOwnPropertyNames(crafts[craftOption.type]).map(tier => <option value={tier}>{tier}</option>)}
+      </select>
+      <input name="amount" className="option--amount" type="text" value={craftOption.amount} onChange={(event) => handleOptionChange(event)}></input>
+      <select name="name" onChange={(event) => handleOptionChange(event)} value={craftOption.name}>
+        {crafts[craftOption.type][craftOption.tier].map(craft => (craft.hasOwnProperty("requirements") ? <option value={craft.name}>{capitalizeEveryWord(craft.name)}</option> : undefined))}
+      </select>
+    </div>
+    }
     function createIngredientDiv(material, amount, raritiesRequest) {
       /**decide which rarity to use. the item ornate rarity or the request rarity from a parent craft
        *  + if there's no rarityRequest do the circle as usual
@@ -97,12 +101,12 @@ export default function Calculator()
     }    
     /**recursive blueprint generator
      * rawFlag
-     * + default to false if undefined is passed(requirement that need a non-raw will not have a raw property) rawFlag would be false
-     * + if true is passed(requirement that need a raw will have a raw property) rawFlag would be true
+     *  default to false if undefined is passed(requirement that need a non-raw will not have a raw property) rawFlag would be false
+     *  if true is passed(requirement that need a raw will have a raw property) rawFlag would be true
      * raritiesRequest is for craft that want to override a material rarity. for example, if an item is uncommon -> legendary but 
      * the craft only want rare -> legendary
-     * + default to undefined. most craft does not have a rarities field in their requirement object aside from jw
-    *  +if passed down to createIngrediantDiv, it will either be undefined OR ["common","uncommon",...]
+     *  default to undefined. most craft does not have a rarities field in their requirement object aside from jw
+    *   if passed down to createIngrediantDiv, it will either be undefined OR ["common","uncommon",...]
   * */
     function createCraftBluePrint(type, tier, name, amount, rawFlag = false, raritiesRequest = undefined)
     {
