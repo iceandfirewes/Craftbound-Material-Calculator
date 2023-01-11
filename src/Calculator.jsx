@@ -7,14 +7,14 @@ export default function Calculator()
       const tempCraftOption = localStorage.getItem("craftOption")
       return tempCraftOption ? JSON.parse(tempCraftOption) : {type:"leatherworking", tier:"I", name:"coarse leather", amount:1}
     })
-    const [isHovered, setIsHovered] = useState([])
+    const [isHovered, setIsHovered] = useState(false)
     //main function to handle user input
     return <>
       {createOptionDiv()}
       <div className="calculator--display">
         {createCraftBluePrint(craftOption.type, craftOption.tier, craftOption.name, craftOption.amount, false)}
       </div>
-      {/* <div className="update">1/11 - add functionality to display Progress, Quality, Durability and Yield</div> */}
+      <div className="update">1/11 - add support to display a craft Progress, Quality and Durability</div>
     </>
     function handleOptionChange(event)
     {
@@ -122,14 +122,21 @@ export default function Calculator()
         //console.log(type, tier, name)
         let material = craftSearch(type, tier, name)
         //
-        const testPRYD = material.hasOwnProperty("PRYD") ? material.PRYD : ["?","?","?","?"]
+        let extraInfo = undefined
+        if (isHovered && material.hasOwnProperty("extraInfo"))
+        {
+          extraInfo = material.extraInfo
+          extraInfo = <div className="ingredient--PQD">
+            <span>P:{extraInfo.progress}</span>
+            <span>Q:{extraInfo.quality}</span>
+            <span>D:{extraInfo.durability}</span>
+          </div>
+        }
         //
         const child = material.requirements.map(requirement => createCraftBluePrint(requirement.type, requirement.tier, requirement.name, amount * requirement.amount, requirement.raw, requirement.rarities))
         return <div className='steps'>
           <div className="ingredient"onMouseOver={() => {setIsHovered(true)}} onMouseOut={() => {setIsHovered(false)}}>
-            {/* {isHover && <div className="ingredient--PRYD">
-              {testPRYD.map(value => (<div>{value}</div>))}
-            </div>} */}
+            {extraInfo}
             {createIngredientDiv(material, amount, raritiesRequest)}
           </div>
           <div>{child}</div>

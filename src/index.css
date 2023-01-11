@@ -50,10 +50,11 @@ text-align: center;
 .ingredient--NAR {
   display: flex;
 }
-.ingredient--PRYD {
+.ingredient--PQD {
   display: flex;
   position: absolute;
   top: 20px;
+  gap: 1em;
 }
 .ingredients--amount {
   margin-left: .3em;

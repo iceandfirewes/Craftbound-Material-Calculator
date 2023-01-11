@@ -110,7 +110,7 @@ export const crafts = {
     leatherworking:{
         //TIER 1
         I:[
-            {name:"coarse leather", rarities:["common", "uncommon"], requirements:[
+            {name:"coarse leather", extraInfo:{progress:4,quality:2,durability:40}, rarities:["common", "uncommon"], requirements:[
                 {type:"skinning", tier: "I", name: "raw hide", amount:1, raw: true}]},
             {name:"coarse leather boots", rarities:["common", "uncommon"], requirements:[{type:"leatherworking", tier: "I", name:"coarse leather", amount:3,}]},
             {name:"coarse leather belt", rarities:["common", "uncommon"], requirements:[{type:"leatherworking", tier: "I", name:"coarse leather", amount:3,}]},
