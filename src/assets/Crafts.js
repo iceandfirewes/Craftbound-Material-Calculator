@@ -156,22 +156,22 @@ export const crafts = {
     },
     blacksmithing:{
         I:[
-            {name:"bronze ingot", rarities:["common", "uncommon"], requirements:[
+            {name:"bronze ingot", extraInfo:{progress:4,quality:2,durability:40}, rarities:["common", "uncommon"], requirements:[
                 {type:"mining", tier: "I", name: "copper ore", amount:1, raw: true}]}
         ],
         II:[
-            {name:"iron ingot", rarities:["common", "uncommon","rare"], requirements:[
+            {name:"iron ingot", extraInfo:{progress:260,quality:130,durability:40}, rarities:["common", "uncommon","rare"], requirements:[
                 {type:"mining", tier: "II", name: "iron ore", amount:2, raw: true},
                 {type:"blacksmithing", tier: "II", name: "sand flux", amount:1, raw: true}]}
         ],
         III:[
-            {name:"steel ingot", rarities:["common", "uncommon","rare","epic"], requirements:[
+            {name:"steel ingot", extraInfo:{progress:508,quality:254,durability:40}, rarities:["common", "uncommon","rare","epic"], requirements:[
                 {type:"mining", tier: "III", name: "coal", amount:3, raw: true},
                 {type:"blacksmithing", tier: "III", name: "limestone flux", amount:1, raw: true},
                 {type:"blacksmithing", tier: "II", name: "iron ingot", amount:1,}]}
         ],
         IV:[
-            {name:"silver ingot", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[
+            {name:"silver ingot", extraInfo:{progress:836,quality:418,durability:40}, rarities:["common", "uncommon","rare","epic","legendary"], requirements:[
                 {type:"mining", tier: "IV", name: "silver ore", amount:4, raw: true},
                 {type:"blacksmithing", tier: "IV", name: "liquid flux", amount:1, raw: true},
                 {type:"blacksmithing", tier: "III", name: "steel ingot", amount:1,}]}
@@ -180,67 +180,67 @@ export const crafts = {
     tailoring:{
         //TIER 1
         I:[
-            {name:"linen cloth", rarities:["common", "uncommon"], requirements:[
+            {name:"linen cloth", extraInfo:{progress:4,quality:2,durability:40}, rarities:["common", "uncommon"], requirements:[
                 {type:"harvesting", tier: "I", name: "fiber", amount:1, raw: true}]},
-            {name:"linen sash", rarities:["common", "uncommon"], requirements:[{type:"tailoring", tier: "I", name:"linen cloth", amount:3,}]},
-            {name:"linen gloves", rarities:["common", "uncommon"], requirements:[{type:"tailoring", tier: "I", name:"linen cloth", amount:3,}]},
-            {name:"linen bandana", rarities:["common", "uncommon"], requirements:[{type:"tailoring", tier: "I", name:"linen cloth", amount:4,}]},
-            {name:"linen shirt", rarities:["common", "uncommon"], requirements:[{type:"tailoring", tier: "I", name:"linen cloth", amount:5,}]},
+            {name:"linen sash", extraInfo:{progress:28,quality:14,durability:60}, rarities:["common", "uncommon"], requirements:[{type:"tailoring", tier: "I", name:"linen cloth", amount:3,}]},
+            {name:"linen gloves", extraInfo:{progress:240,quality:120,durability:60}, rarities:["common", "uncommon"], requirements:[{type:"tailoring", tier: "I", name:"linen cloth", amount:3,}]},
+            {name:"linen bandana", extraInfo:{progress:536,quality:268,durability:70}, rarities:["common", "uncommon"], requirements:[{type:"tailoring", tier: "I", name:"linen cloth", amount:4,}]},
+            {name:"linen shirt", extraInfo:{progress:1008,quality:504,durability:80}, rarities:["common", "uncommon"], requirements:[{type:"tailoring", tier: "I", name:"linen cloth", amount:5,}]},
         ],
         //TIER 2
         II:[
-            {name:"wool cloth", rarities:["common", "uncommon","rare"], requirements:[
+            {name:"wool cloth", extraInfo:{progress:260,quality:130,durability:40}, rarities:["common", "uncommon","rare"], requirements:[
                 {type:"harvesting", tier: "II", name: "cotton", amount:2, raw: true},
                 {type:"tailoring", tier: "II", name: "coarse thread", amount:1, raw: true}
             ]},
-            {name:"wool sash", rarities:["common", "uncommon","rare"], requirements:[{type:"tailoring", tier: "II", name:"wool cloth", amount:3,}]},
-            {name:"wool gloves", rarities:["common", "uncommon","rare"], requirements:[{type:"tailoring", tier: "II", name:"wool cloth", amount:3,}]},
-            {name:"wool bandana", rarities:["common", "uncommon","rare"], requirements:[{type:"tailoring", tier: "II", name:"wool cloth", amount:4,}]},
-            {name:"wool shirt", rarities:["common", "uncommon","rare"], requirements:[{type:"tailoring", tier: "II", name:"wool cloth", amount:5,}]},
+            {name:"wool sash", extraInfo:{progress:844,quality:422,durability:60}, rarities:["common", "uncommon","rare"], requirements:[{type:"tailoring", tier: "II", name:"wool cloth", amount:3,}]},
+            {name:"wool gloves", extraInfo:{progress:1122,quality:560,durability:60}, rarities:["common", "uncommon","rare"], requirements:[{type:"tailoring", tier: "II", name:"wool cloth", amount:3,}]},
+            {name:"wool bandana", extraInfo:{progress:1702,quality:850,durability:70}, rarities:["common", "uncommon","rare"], requirements:[{type:"tailoring", tier: "II", name:"wool cloth", amount:4,}]},
+            {name:"wool shirt", extraInfo:{progress:2400,quality:1200,durability:80}, rarities:["common", "uncommon","rare"], requirements:[{type:"tailoring", tier: "II", name:"wool cloth", amount:5,}]},
         ],
         //TIER 3
         III:[
-            {name:"sateen", rarities:["common", "uncommon","rare","epic"], requirements:[
+            {name:"sateen", extraInfo:{progress:508,quality:254,durability:40}, rarities:["common", "uncommon","rare","epic"], requirements:[
                 {type:"harvesting", tier: "III", name: "hemp", amount:3, raw: true},
                 {type:"tailoring", tier: "III", name: "fine thread", amount:1, raw: true},
                 {type:"tailoring", tier: "II", name: "wool cloth", amount:1,}
             ]},
-            {name:"sateen sash", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"tailoring", tier: "III", name:"sateen", amount:3,}]},
-            {name:"sateen gloves", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"tailoring", tier: "III", name:"sateen", amount:3,}]},
-            {name:"sateen bandana", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"tailoring", tier: "III", name:"sateen", amount:4,}]},
-            {name:"sateen shirt", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"tailoring", tier: "III", name:"sateen", amount:5,}]},
+            {name:"sateen sash", extraInfo:{progress:1612,quality:806,durability:60}, rarities:["common", "uncommon","rare","epic"], requirements:[{type:"tailoring", tier: "III", name:"sateen", amount:3,}]},
+            {name:"sateen gloves", extraInfo:{progress:1986,quality:992,durability:60}, rarities:["common", "uncommon","rare","epic"], requirements:[{type:"tailoring", tier: "III", name:"sateen", amount:3,}]},
+            {name:"sateen bandana", extraInfo:{progress:2918,quality:1458,durability:70}, rarities:["common", "uncommon","rare","epic"], requirements:[{type:"tailoring", tier: "III", name:"sateen", amount:4,}]},
+            {name:"sateen shirt", extraInfo:{progress:4000,quality:2000,durability:80}, rarities:["common", "uncommon","rare","epic"], requirements:[{type:"tailoring", tier: "III", name:"sateen", amount:5,}]},
         ],
         //TIER 4
         IV:[
-            {name:"silk cloth", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[
+            {name:"silk cloth", extraInfo:{progress:836,quality:418,durability:40}, rarities:["common", "uncommon","rare","epic","legendary"], requirements:[
                 {type:"harvesting", tier: "IV", name: "silkweed", amount:4, raw: true},
                 {type:"tailoring", tier: "IV", name: "silken thread", amount:1, raw: true},
                 {type:"tailoring", tier: "III", name: "sateen", amount:1,}
             ]},
-            {name:"silk sash", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"tailoring", tier: "IV", name:"silk cloth", amount:3,}]},
-            {name:"silk gloves", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"tailoring", tier: "IV", name:"silk cloth", amount:3,}]},
-            {name:"silk bandana", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"tailoring", tier: "IV", name:"silk cloth", amount:4,}]},
-            {name:"silk shirt", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"tailoring", tier: "IV", name:"silk cloth", amount:5,}]},
+            {name:"silk sash", extraInfo:{progress:2620,quality:1310,durability:60}, rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"tailoring", tier: "IV", name:"silk cloth", amount:3,}]},
+            {name:"silk gloves", extraInfo:{progress:3090,quality:1544,durability:60}, rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"tailoring", tier: "IV", name:"silk cloth", amount:3,}]},
+            {name:"silk bandana", extraInfo:{progress:4454,quality:2226,durability:70}, rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"tailoring", tier: "IV", name:"silk cloth", amount:4,}]},
+            {name:"silk shirt", extraInfo:{progress:6000,quality:3000,durability:80}, rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"tailoring", tier: "IV", name:"silk cloth", amount:5,}]},
         ]
     },
     woodworking:{
         I:[
-            {name:"beech lumber", rarities:["common", "uncommon"], requirements:[
+            {name:"beech lumber", extraInfo:{progress:4,quality:2,durability:40}, rarities:["common", "uncommon"], requirements:[
                 {type:"logging", tier: "I", name: "beech log", amount:1, raw: true}]}
         ],
         II:[
-            {name:"pine lumber", rarities:["common", "uncommon","rare"], requirements:[
+            {name:"pine lumber", extraInfo:{progress:260,quality:130,durability:40}, rarities:["common", "uncommon","rare"], requirements:[
                 {type:"logging", tier: "II", name: "pine log", amount:2, raw: true},
                 {type:"woodworking", tier: "II", name: "coarse sandpaper", amount:1, raw: true}]}
         ],
         III:[
-            {name:"oak lumber", rarities:["common", "uncommon","rare","epic"], requirements:[
+            {name:"oak lumber", extraInfo:{progress:508,quality:254,durability:40}, rarities:["common", "uncommon","rare","epic"], requirements:[
                 {type:"logging", tier: "III", name: "oak log", amount:3, raw: true},
                 {type:"woodworking", tier: "III", name: "rugged sandpaper", amount:1, raw: true},
                 {type:"woodworking", tier: "II", name: "pine lumber", amount:1,}]}
         ],
         IV:[
-            {name:"birch lumber", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[
+            {name:"birch lumber", extraInfo:{progress:836,quality:418,durability:40}, rarities:["common", "uncommon","rare","epic","legendary"], requirements:[
                 {type:"logging", tier: "IV", name: "birch log", amount:4, raw: true},
                 {type:"woodworking", tier: "IV", name: "fine sandpaper", amount:1, raw: true},
                 {type:"woodworking", tier: "III", name: "oak lumber", amount:1,}]}
@@ -351,59 +351,59 @@ export const crafts = {
     },
     engineering:{
         I:[
-            {name:"flint harvesting sickle", rarities:["common"], requirements:[
+            {name:"flint harvesting sickle", extraInfo:{progress:30,quality:14,durability:80}, rarities:["common"], requirements:[
                 {type:"harvesting", tier: "I", name: "flint", amount:2, raw: true},
                 {type:"logging", tier: "I", name: "beech log", amount:1, raw: true}]},
-            {name:"flint logging axe", rarities:["common"], requirements:[
+            {name:"flint logging axe", extraInfo:{progress:30,quality:14,durability:80}, rarities:["common"], requirements:[
                 {type:"harvesting", tier: "I", name: "flint", amount:2, raw: true},
                 {type:"logging", tier: "I", name: "beech log", amount:1, raw: true}]},
-            {name:"flint mining pickaxe", rarities:["common"], requirements:[
+            {name:"flint mining pickaxe", extraInfo:{progress:30,quality:14,durability:80}, rarities:["common"], requirements:[
                 {type:"harvesting", tier: "I", name: "flint", amount:2, raw: true},
                 {type:"logging", tier: "I", name: "beech log", amount:1, raw: true}]},
-            {name:"flint skinning knife", rarities:["common"], requirements:[
+            {name:"flint skinning knife", extraInfo:{progress:30,quality:14,durability:80}, rarities:["common"], requirements:[
                 {type:"harvesting", tier: "I", name: "flint", amount:2, raw: true},
                 {type:"logging", tier: "I", name: "beech log", amount:1, raw: true}]},
-            {name:"bronze harvesting sickle", rarities:["common","uncommon"], requirements:[
+            {name:"bronze harvesting sickle", extraInfo:{progress:1680,quality:840,durability:80}, rarities:["common","uncommon"], requirements:[
                 {type:"leatherworking", tier: "I", name: "coarse leather", amount:7},
                 {type:"blacksmithing", tier: "I", name: "bronze ingot", amount:7},
                 {type:"logging", tier: "I", name: "beech tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "I", name: "beech lumber", amount:7}]},
-            {name:"bronze engineering hammer", rarities:["common","uncommon"], requirements:[
+            {name:"bronze engineering hammer", extraInfo:{progress:1680,quality:840,durability:80}, rarities:["common","uncommon"], requirements:[
                 {type:"leatherworking", tier: "I", name: "coarse leather", amount:7},
                 {type:"blacksmithing", tier: "I", name: "bronze ingot", amount:7},
                 {type:"logging", tier: "I", name: "beech tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "I", name: "beech lumber", amount:7,}]},
-            {name:"bronze mining pickaxe", rarities:["common","uncommon"], requirements:[
+            {name:"bronze mining pickaxe", extraInfo:{progress:1680,quality:840,durability:80}, rarities:["common","uncommon"], requirements:[
                 {type:"leatherworking", tier: "I", name: "coarse leather", amount:7},
                 {type:"blacksmithing", tier: "I", name: "bronze ingot", amount:7},
                 {type:"logging", tier: "I", name: "beech tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "I", name: "beech lumber", amount:7,}]},
-            {name:"bronze tailoring needle", rarities:["common","uncommon"], requirements:[
+            {name:"bronze tailoring needle", extraInfo:{progress:1680,quality:840,durability:80}, rarities:["common","uncommon"], requirements:[
                 {type:"leatherworking", tier: "I", name: "coarse leather", amount:7},
                 {type:"blacksmithing", tier: "I", name: "bronze ingot", amount:7},
                 {type:"logging", tier: "I", name: "beech tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "I", name: "beech lumber", amount:7,}]},
-            {name:"bronze logging axe", rarities:["common","uncommon"], requirements:[
+            {name:"bronze logging axe", extraInfo:{progress:1680,quality:840,durability:80}, rarities:["common","uncommon"], requirements:[
                 {type:"leatherworking", tier: "I", name: "coarse leather", amount:7},
                 {type:"blacksmithing", tier: "I", name: "bronze ingot", amount:7},
                 {type:"logging", tier: "I", name: "beech tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "I", name: "beech lumber", amount:7,}]},
-            {name:"bronze leatherworking knife", rarities:["common","uncommon"], requirements:[
+            {name:"bronze leatherworking knife", extraInfo:{progress:1680,quality:840,durability:80}, rarities:["common","uncommon"], requirements:[
                 {type:"leatherworking", tier: "I", name: "coarse leather", amount:7},
                 {type:"blacksmithing", tier: "I", name: "bronze ingot", amount:7},
                 {type:"logging", tier: "I", name: "beech tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "I", name: "beech lumber", amount:7,}]},
-            {name:"bronze blacksmithing hammer", rarities:["common","uncommon"], requirements:[
+            {name:"bronze blacksmithing hammer", extraInfo:{progress:1680,quality:840,durability:80}, rarities:["common","uncommon"], requirements:[
                 {type:"leatherworking", tier: "I", name: "coarse leather", amount:7},
                 {type:"blacksmithing", tier: "I", name: "bronze ingot", amount:7},
                 {type:"logging", tier: "I", name: "beech tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "I", name: "beech lumber", amount:7,}]},
-            {name:"bronze skinning knife", rarities:["common","uncommon"], requirements:[
+            {name:"bronze skinning knife", extraInfo:{progress:1680,quality:840,durability:80}, rarities:["common","uncommon"], requirements:[
                 {type:"leatherworking", tier: "I", name: "coarse leather", amount:7},
                 {type:"blacksmithing", tier: "I", name: "bronze ingot", amount:7},
                 {type:"logging", tier: "I", name: "beech tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "I", name: "beech lumber", amount:7,}]},
-            {name:"bronze woodworking saw", rarities:["common","uncommon"], requirements:[
+            {name:"bronze woodworking saw", extraInfo:{progress:1680,quality:840,durability:80}, rarities:["common","uncommon"], requirements:[
                 {type:"leatherworking", tier: "I", name: "coarse leather", amount:7},
                 {type:"blacksmithing", tier: "I", name: "bronze ingot", amount:7},
                 {type:"logging", tier: "I", name: "beech tree sap", amount:1, raw: true},
@@ -412,47 +412,47 @@ export const crafts = {
         II:[
             {name:"iron nut", rarities:["common","uncommon","rare"], requirements:[
                 {type:"blacksmithing", tier: "II", name: "iron ingot", amount:1}]},
-            {name:"iron harvesting sickle", rarities:["common","uncommon","rare"], requirements:[
+            {name:"iron harvesting sickle", extraInfo:{progress:3360,quality:1640,durability:80}, rarities:["common","uncommon","rare"], requirements:[
                 {type:"leatherworking", tier: "II", name: "light leather", amount:7},
                 {type:"blacksmithing", tier: "II", name: "iron ingot", amount:7},
                 {type:"logging", tier: "II", name: "pine tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "II", name: "pine lumber", amount:7,}]},
-            {name:"iron engineering hammer", rarities:["common","uncommon","rare"], requirements:[
+            {name:"iron engineering hammer", extraInfo:{progress:3360,quality:1640,durability:80}, rarities:["common","uncommon","rare"], requirements:[
                 {type:"leatherworking", tier: "II", name: "light leather", amount:7},
                 {type:"blacksmithing", tier: "II", name: "iron ingot", amount:7},
                 {type:"logging", tier: "II", name: "pine tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "II", name: "pine lumber", amount:7,}]},
-            {name:"iron mining pickaxe", rarities:["common","uncommon","rare"], requirements:[
+            {name:"iron mining pickaxe", extraInfo:{progress:3360,quality:1640,durability:80}, rarities:["common","uncommon","rare"], requirements:[
                 {type:"leatherworking", tier: "II", name: "light leather", amount:7},
                 {type:"blacksmithing", tier: "II", name: "iron ingot", amount:7},
                 {type:"logging", tier: "II", name: "pine tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "II", name: "pine lumber", amount:7,}]},
-            {name:"iron tailoring needle", rarities:["common","uncommon","rare"], requirements:[
+            {name:"iron tailoring needle", extraInfo:{progress:3360,quality:1640,durability:80}, rarities:["common","uncommon","rare"], requirements:[
                 {type:"leatherworking", tier: "II", name: "light leather", amount:7},
                 {type:"blacksmithing", tier: "II", name: "iron ingot", amount:7},
                 {type:"logging", tier: "II", name: "pine tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "II", name: "pine lumber", amount:7,}]},
-            {name:"iron logging axe", rarities:["common","uncommon","rare"], requirements:[
+            {name:"iron logging axe", extraInfo:{progress:3360,quality:1640,durability:80}, rarities:["common","uncommon","rare"], requirements:[
                 {type:"leatherworking", tier: "II", name: "light leather", amount:7},
                 {type:"blacksmithing", tier: "II", name: "iron ingot", amount:7},
                 {type:"logging", tier: "II", name: "pine tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "II", name: "pine lumber", amount:7,}]},
-            {name:"iron leatherworking knife", rarities:["common","uncommon","rare"], requirements:[
+            {name:"iron leatherworking knife", extraInfo:{progress:3360,quality:1640,durability:80}, rarities:["common","uncommon","rare"], requirements:[
                 {type:"leatherworking", tier: "II", name: "light leather", amount:7},
                 {type:"blacksmithing", tier: "II", name: "iron ingot", amount:7},
                 {type:"logging", tier: "II", name: "pine tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "II", name: "pine lumber", amount:7,}]},
-            {name:"iron blacksmithing hammer", rarities:["common","uncommon","rare"], requirements:[
+            {name:"iron blacksmithing hammer", extraInfo:{progress:3360,quality:1640,durability:80}, rarities:["common","uncommon","rare"], requirements:[
                 {type:"leatherworking", tier: "II", name: "light leather", amount:7},
                 {type:"blacksmithing", tier: "II", name: "iron ingot", amount:7},
                 {type:"logging", tier: "II", name: "pine tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "II", name: "pine lumber", amount:7,}]},
-            {name:"iron skinning knife", rarities:["common","uncommon","rare"], requirements:[
+            {name:"iron skinning knife", extraInfo:{progress:3360,quality:1640,durability:80}, rarities:["common","uncommon","rare"], requirements:[
                 {type:"leatherworking", tier: "II", name: "light leather", amount:7},
                 {type:"blacksmithing", tier: "II", name: "iron ingot", amount:7},
                 {type:"logging", tier: "II", name: "pine tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "II", name: "pine lumber", amount:7,}]},
-            {name:"iron woodworking saw", rarities:["common","uncommon","rare"], requirements:[
+            {name:"iron woodworking saw", extraInfo:{progress:3360,quality:1640,durability:80}, rarities:["common","uncommon","rare"], requirements:[
                 {type:"leatherworking", tier: "II", name: "light leather", amount:7},
                 {type:"blacksmithing", tier: "II", name: "iron ingot", amount:7},
                 {type:"logging", tier: "II", name: "pine tree sap", amount:1, raw: true},
@@ -461,47 +461,47 @@ export const crafts = {
         III:[
             {name:"steel nut", rarities:["common","uncommon","rare","epic"], requirements:[
                 {type:"blacksmithing", tier: "III", name: "steel ingot", amount:1}]},
-            {name:"steel harvesting sickle", rarities:["common","uncommon","rare","epic"], requirements:[
+            {name:"steel harvesting sickle", extraInfo:{progress:5600,quality:2800,durability:80}, rarities:["common","uncommon","rare","epic"], requirements:[
                 {type:"leatherworking", tier: "III", name: "heavy leather", amount:7},
                 {type:"blacksmithing", tier: "III", name: "steel ingot", amount:7},
                 {type:"logging", tier: "III", name: "oak tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "III", name: "oak lumber", amount:7,}]},
-            {name:"steel engineering hammer", rarities:["common","uncommon","rare","epic"], requirements:[
+            {name:"steel engineering hammer", extraInfo:{progress:5600,quality:2800,durability:80}, rarities:["common","uncommon","rare","epic"], requirements:[
                 {type:"leatherworking", tier: "III", name: "heavy leather", amount:7},
                 {type:"blacksmithing", tier: "III", name: "steel ingot", amount:7},
                 {type:"logging", tier: "III", name: "oak tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "III", name: "oak lumber", amount:7,}]},
-            {name:"steel mining pickaxe", rarities:["common","uncommon","rare","epic"], requirements:[
+            {name:"steel mining pickaxe", extraInfo:{progress:5600,quality:2800,durability:80}, rarities:["common","uncommon","rare","epic"], requirements:[
                 {type:"leatherworking", tier: "III", name: "heavy leather", amount:7},
                 {type:"blacksmithing", tier: "III", name: "steel ingot", amount:7},
                 {type:"logging", tier: "III", name: "oak tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "III", name: "oak lumber", amount:7,}]},
-            {name:"steel tailoring needle", rarities:["common","uncommon","rare","epic"], requirements:[
+            {name:"steel tailoring needle", extraInfo:{progress:5600,quality:2800,durability:80}, rarities:["common","uncommon","rare","epic"], requirements:[
                 {type:"leatherworking", tier: "III", name: "heavy leather", amount:7},
                 {type:"blacksmithing", tier: "III", name: "steel ingot", amount:7},
                 {type:"logging", tier: "III", name: "oak tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "III", name: "oak lumber", amount:7,}]},
-            {name:"steel logging axe", rarities:["common","uncommon","rare","epic"], requirements:[
+            {name:"steel logging axe", extraInfo:{progress:5600,quality:2800,durability:80}, rarities:["common","uncommon","rare","epic"], requirements:[
                 {type:"leatherworking", tier: "III", name: "heavy leather", amount:7},
                 {type:"blacksmithing", tier: "III", name: "steel ingot", amount:7},
                 {type:"logging", tier: "III", name: "oak tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "III", name: "oak lumber", amount:7,}]},
-            {name:"steel leatherworking knife", rarities:["common","uncommon","rare","epic"], requirements:[
+            {name:"steel leatherworking knife", extraInfo:{progress:5600,quality:2800,durability:80}, rarities:["common","uncommon","rare","epic"], requirements:[
                 {type:"leatherworking", tier: "III", name: "heavy leather", amount:7},
                 {type:"blacksmithing", tier: "III", name: "steel ingot", amount:7},
                 {type:"logging", tier: "III", name: "oak tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "III", name: "oak lumber", amount:7,}]},
-            {name:"steel blacksmithing hammer", rarities:["common","uncommon","rare","epic"], requirements:[
+            {name:"steel blacksmithing hammer", extraInfo:{progress:5600,quality:2800,durability:80}, rarities:["common","uncommon","rare","epic"], requirements:[
                 {type:"leatherworking", tier: "III", name: "heavy leather", amount:7},
                 {type:"blacksmithing", tier: "III", name: "steel ingot", amount:7},
                 {type:"logging", tier: "III", name: "oak tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "III", name: "oak lumber", amount:7,}]},
-            {name:"steel skinning knife", rarities:["common","uncommon","rare","epic"], requirements:[
+            {name:"steel skinning knife", extraInfo:{progress:5600,quality:2800,durability:80}, rarities:["common","uncommon","rare","epic"], requirements:[
                 {type:"leatherworking", tier: "III", name: "heavy leather", amount:7},
                 {type:"blacksmithing", tier: "III", name: "steel ingot", amount:7},
                 {type:"logging", tier: "III", name: "oak tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "III", name: "oak lumber", amount:7,}]},
-            {name:"steel woodworking saw", rarities:["common","uncommon","rare","epic"], requirements:[
+            {name:"steel woodworking saw", extraInfo:{progress:5600,quality:2800,durability:80}, rarities:["common","uncommon","rare","epic"], requirements:[
                 {type:"leatherworking", tier: "III", name: "heavy leather", amount:7},
                 {type:"blacksmithing", tier: "III", name: "steel ingot", amount:7},
                 {type:"logging", tier: "III", name: "oak tree sap", amount:1, raw: true},
@@ -510,47 +510,47 @@ export const crafts = {
         IV:[
             {name:"silver nut", rarities:["common","uncommon","rare","epic","legendary"], requirements:[
                 {type:"blacksmithing", tier: "IV", name: "silver ingot", amount:1}]},
-            {name:"silver harvesting sickle", rarities:["common","uncommon","rare","epic","legendary"], requirements:[
+            {name:"silver harvesting sickle", extraInfo:{progress:8400,quality:4200,durability:80}, rarities:["common","uncommon","rare","epic","legendary"], requirements:[
                 {type:"leatherworking", tier: "IV", name: "rugged leather", amount:7},
                 {type:"blacksmithing", tier: "IV", name: "silver ingot", amount:7},
                 {type:"logging", tier: "IV", name: "birch tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "IV", name: "birch lumber", amount:7,}]},
-            {name:"silver engineering hammer", rarities:["common","uncommon","rare","epic","legendary"], requirements:[
+            {name:"silver engineering hammer", extraInfo:{progress:8400,quality:4200,durability:80}, rarities:["common","uncommon","rare","epic","legendary"], requirements:[
                 {type:"leatherworking", tier: "IV", name: "rugged leather", amount:7},
                 {type:"blacksmithing", tier: "IV", name: "silver ingot", amount:7},
                 {type:"logging", tier: "IV", name: "birch tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "IV", name: "birch lumber", amount:7,}]},
-            {name:"silver mining pickaxe", rarities:["common","uncommon","rare","epic","legendary"], requirements:[
+            {name:"silver mining pickaxe", extraInfo:{progress:8400,quality:4200,durability:80}, rarities:["common","uncommon","rare","epic","legendary"], requirements:[
                 {type:"leatherworking", tier: "IV", name: "rugged leather", amount:7},
                 {type:"blacksmithing", tier: "IV", name: "silver ingot", amount:7},
                 {type:"logging", tier: "IV", name: "birch tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "IV", name: "birch lumber", amount:7,}]},
-            {name:"silver tailoring needle", rarities:["common","uncommon","rare","epic","legendary"], requirements:[
+            {name:"silver tailoring needle", extraInfo:{progress:8400,quality:4200,durability:80}, rarities:["common","uncommon","rare","epic","legendary"], requirements:[
                 {type:"leatherworking", tier: "IV", name: "rugged leather", amount:7},
                 {type:"blacksmithing", tier: "IV", name: "silver ingot", amount:7},
                 {type:"logging", tier: "IV", name: "birch tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "IV", name: "birch lumber", amount:7,}]},
-            {name:"silver logging axe", rarities:["common","uncommon","rare","epic","legendary"], requirements:[
+            {name:"silver logging axe", extraInfo:{progress:8400,quality:4200,durability:80}, rarities:["common","uncommon","rare","epic","legendary"], requirements:[
                 {type:"leatherworking", tier: "IV", name: "rugged leather", amount:7},
                 {type:"blacksmithing", tier: "IV", name: "silver ingot", amount:7},
                 {type:"logging", tier: "IV", name: "birch tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "IV", name: "birch lumber", amount:7,}]},
-            {name:"silver leatherworking knife", rarities:["common","uncommon","rare","epic","legendary"], requirements:[
+            {name:"silver leatherworking knife", extraInfo:{progress:8400,quality:4200,durability:80}, rarities:["common","uncommon","rare","epic","legendary"], requirements:[
                 {type:"leatherworking", tier: "IV", name: "rugged leather", amount:7},
                 {type:"blacksmithing", tier: "IV", name: "silver ingot", amount:7},
                 {type:"logging", tier: "IV", name: "birch tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "IV", name: "birch lumber", amount:7,}]},
-            {name:"silver blacksmithing hammer", rarities:["common","uncommon","rare","epic","legendary"], requirements:[
+            {name:"silver blacksmithing hammer", extraInfo:{progress:8400,quality:4200,durability:80}, rarities:["common","uncommon","rare","epic","legendary"], requirements:[
                 {type:"leatherworking", tier: "IV", name: "rugged leather", amount:7},
                 {type:"blacksmithing", tier: "IV", name: "silver ingot", amount:7},
                 {type:"logging", tier: "IV", name: "birch tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "IV", name: "birch lumber", amount:7,}]},
-            {name:"silver skinning knife", rarities:["common","uncommon","rare","epic","legendary"], requirements:[
+            {name:"silver skinning knife", extraInfo:{progress:8400,quality:4200,durability:80}, rarities:["common","uncommon","rare","epic","legendary"], requirements:[
                 {type:"leatherworking", tier: "IV", name: "rugged leather", amount:7},
                 {type:"blacksmithing", tier: "IV", name: "silver ingot", amount:7},
                 {type:"logging", tier: "IV", name: "birch tree sap", amount:1, raw: true},
                 {type:"woodworking", tier: "IV", name: "birch lumber", amount:7,}]},
-            {name:"silver woodworking saw", rarities:["common","uncommon","rare","epic","legendary"], requirements:[
+            {name:"silver woodworking saw", extraInfo:{progress:8400,quality:4200,durability:80}, rarities:["common","uncommon","rare","epic","legendary"], requirements:[
                 {type:"leatherworking", tier: "IV", name: "rugged leather", amount:7},
                 {type:"blacksmithing", tier: "IV", name: "silver ingot", amount:7},
                 {type:"logging", tier: "IV", name: "birch tree sap", amount:1, raw: true},
