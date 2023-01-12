@@ -135,8 +135,8 @@ export default function Calculator()
         }
         //
         const child = material.requirements.map(requirement => createCraftBluePrint(requirement.type, requirement.tier, requirement.name, amount * requirement.amount, requirement.raw, requirement.rarities))
-        return <div className='steps'>
-          <div className="ingredient" onMouseOver={() => {setIsHovered(true)}} onMouseOut={() => {setIsHovered(false)}}>
+        return <div className='steps' onMouseOver={() => {setIsHovered(true)}} onMouseOut={() => {setIsHovered(false)}}>
+          <div className="ingredient" >
           {/* <div className="ingredient" onMouseOver={() => {setIsHovered(false)}} onMouseOut={() => {setIsHovered(true)}}> */}
             {createIngredientDiv(material, amount, raritiesRequest)}
             {extraInfo}
