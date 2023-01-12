@@ -7,6 +7,8 @@ export default function Calculator()
       const tempCraftOption = localStorage.getItem("craftOption")
       return tempCraftOption ? JSON.parse(tempCraftOption) : {type:"leatherworking", tier:"I", name:"coarse leather", amount:1}
     })
+    // debug 
+    // const [isHovered, setIsHovered] = useState(true)
     const [isHovered, setIsHovered] = useState(false)
     //main function to handle user input
     return <>
@@ -14,11 +16,10 @@ export default function Calculator()
       <div className="calculator--display">
         {createCraftBluePrint(craftOption.type, craftOption.tier, craftOption.name, craftOption.amount, false)}
       </div>
-      <div className="update">1/11 - add support to display a craft Progress, Quality and Durability</div>
+      <div className="update">1/12 - display PQD for LW</div>
     </>
     function handleOptionChange(event)
     {
-      setIsHovered([])
       setcraftOption(oldCraftOption => {
         const newCraftOption = {
           ...oldCraftOption,
@@ -135,9 +136,10 @@ export default function Calculator()
         //
         const child = material.requirements.map(requirement => createCraftBluePrint(requirement.type, requirement.tier, requirement.name, amount * requirement.amount, requirement.raw, requirement.rarities))
         return <div className='steps'>
-          <div className="ingredient"onMouseOver={() => {setIsHovered(true)}} onMouseOut={() => {setIsHovered(false)}}>
-            {extraInfo}
+          <div className="ingredient" onMouseOver={() => {setIsHovered(true)}} onMouseOut={() => {setIsHovered(false)}}>
+          {/* <div className="ingredient" onMouseOver={() => {setIsHovered(false)}} onMouseOut={() => {setIsHovered(true)}}> */}
             {createIngredientDiv(material, amount, raritiesRequest)}
+            {extraInfo}
           </div>
           <div>{child}</div>
         </div>

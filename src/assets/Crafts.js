@@ -112,46 +112,46 @@ export const crafts = {
         I:[
             {name:"coarse leather", extraInfo:{progress:4,quality:2,durability:40}, rarities:["common", "uncommon"], requirements:[
                 {type:"skinning", tier: "I", name: "raw hide", amount:1, raw: true}]},
-            {name:"coarse leather boots", rarities:["common", "uncommon"], requirements:[{type:"leatherworking", tier: "I", name:"coarse leather", amount:3,}]},
-            {name:"coarse leather belt", rarities:["common", "uncommon"], requirements:[{type:"leatherworking", tier: "I", name:"coarse leather", amount:3,}]},
-            {name:"coarse leather gloves", rarities:["common", "uncommon"], requirements:[{type:"leatherworking", tier: "I", name:"coarse leather", amount:3,}]},
-            {name:"coarse leather cap", rarities:["common", "uncommon"], requirements:[{type:"leatherworking", tier: "I", name:"coarse leather", amount:4,}]},
-            {name:"coarse leather apron", rarities:["common", "uncommon"], requirements:[{type:"leatherworking", tier: "I", name:"coarse leather", amount:5,}]},
+            {name:"coarse leather boots", extraInfo:{progress:28,quality:2,durability:40}, rarities:["common", "uncommon"], requirements:[{type:"leatherworking", tier: "I", name:"coarse leather", amount:3,}]},
+            {name:"coarse leather belt", extraInfo:{progress:114,quality:14,durability:60}, rarities:["common", "uncommon"], requirements:[{type:"leatherworking", tier: "I", name:"coarse leather", amount:3,}]},
+            {name:"coarse leather gloves", extraInfo:{progress:240,quality:56,durability:60}, rarities:["common", "uncommon"], requirements:[{type:"leatherworking", tier: "I", name:"coarse leather", amount:3,}]},
+            {name:"coarse leather cap", extraInfo:{progress:536,quality:268,durability:70}, rarities:["common", "uncommon"], requirements:[{type:"leatherworking", tier: "I", name:"coarse leather", amount:4,}]},
+            {name:"coarse leather apron", extraInfo:{progress:1008,quality:504,durability:80}, rarities:["common", "uncommon"], requirements:[{type:"leatherworking", tier: "I", name:"coarse leather", amount:5,}]},
         ],
         //TIER 2
         II:[
-            {name:"light leather", rarities:["common", "uncommon","rare"], requirements:[
+            {name:"light leather", extraInfo:{progress:260,quality:130,durability:40}, rarities:["common", "uncommon","rare"], requirements:[
                 {type:"skinning", tier: "II", name:"light hide", amount:2, raw: true},
                 {type:"leatherworking", tier: "II", name:"tannin", amount:1, raw: true}]},
-            {name:"light leather boots", rarities:["common", "uncommon","rare"], requirements:[{type:"leatherworking", tier: "II", name:"light leather", amount:3,}]},
-            {name:"light leather belt", rarities:["common", "uncommon","rare"], requirements:[{type:"leatherworking", tier: "II", name:"light leather", amount:3,}]},
-            {name:"light leather gloves", rarities:["common", "uncommon","rare"], requirements:[{type:"leatherworking", tier: "II", name:"light leather", amount:3,}]},
-            {name:"light leather cap", rarities:["common", "uncommon","rare"], requirements:[{type:"leatherworking", tier: "II", name:"light leather", amount:4,}]},
-            {name:"light leather apron", rarities:["common", "uncommon","rare"], requirements:[{type:"leatherworking", tier: "II", name:"light leather", amount:5,}]},
+            {name:"light leather boots", extraInfo:{progress:844,quality:422,durability:60}, rarities:["common", "uncommon","rare"], requirements:[{type:"leatherworking", tier: "II", name:"light leather", amount:3,}]},
+            {name:"light leather belt", extraInfo:{progress:978,quality:488,durability:60}, rarities:["common", "uncommon","rare"], requirements:[{type:"leatherworking", tier: "II", name:"light leather", amount:3,}]},
+            {name:"light leather gloves", extraInfo:{progress:1122,quality:560,durability:60}, rarities:["common", "uncommon","rare"], requirements:[{type:"leatherworking", tier: "II", name:"light leather", amount:3,}]},
+            {name:"light leather cap", extraInfo:{progress:1702,quality:850,durability:70}, rarities:["common", "uncommon","rare"], requirements:[{type:"leatherworking", tier: "II", name:"light leather", amount:4,}]},
+            {name:"light leather apron", extraInfo:{progress:2400,quality:1200,durability:80}, rarities:["common", "uncommon","rare"], requirements:[{type:"leatherworking", tier: "II", name:"light leather", amount:5,}]},
         ],
         //TIER 3
         III:[
-            {name:"heavy leather", rarities:["common", "uncommon","rare","epic"], requirements:[
+            {name:"heavy leather", extraInfo:{progress:508,quality:254,durability:40}, rarities:["common", "uncommon","rare","epic"], requirements:[
                 {type:"skinning", tier: "III", name:"heavy hide", amount:3, raw: true},
                 {type:"leatherworking", tier: "III", name:"rested tannin", amount:1, raw: true},
                 {type:"leatherworking", tier: "II", name:"light leather", amount:1,}]},
-            {name:"heavy leather boots", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"leatherworking", tier: "III", name:"heavy leather", amount:3,}]},
-            {name:"heavy leather belt", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"leatherworking", tier: "III", name:"heavy leather", amount:3,}]},
-            {name:"heavy leather gloves", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"leatherworking", tier: "III", name:"heavy leather", amount:3,}]},
-            {name:"heavy leather cap", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"leatherworking", tier: "III", name:"heavy leather", amount:4,}]},
-            {name:"heavy leather apron", rarities:["common", "uncommon","rare","epic"], requirements:[{type:"leatherworking", tier: "III", name:"heavy leather", amount:5,}]},
+            {name:"heavy leather boots", extraInfo:{progress:1612,quality:806,durability:60}, rarities:["common", "uncommon","rare","epic"], requirements:[{type:"leatherworking", tier: "III", name:"heavy leather", amount:3,}]},
+            {name:"heavy leather belt", extraInfo:{progress:1794,quality:892,durability:60}, rarities:["common", "uncommon","rare","epic"], requirements:[{type:"leatherworking", tier: "III", name:"heavy leather", amount:3,}]},
+            {name:"heavy leather gloves", extraInfo:{progress:1986,quality:992,durability:60}, rarities:["common", "uncommon","rare","epic"], requirements:[{type:"leatherworking", tier: "III", name:"heavy leather", amount:3,}]},
+            {name:"heavy leather cap", extraInfo:{progress:2918,quality:1458,durability:70}, rarities:["common", "uncommon","rare","epic"], requirements:[{type:"leatherworking", tier: "III", name:"heavy leather", amount:4,}]},
+            {name:"heavy leather apron", extraInfo:{progress:4000,quality:2000,durability:80}, rarities:["common", "uncommon","rare","epic"], requirements:[{type:"leatherworking", tier: "III", name:"heavy leather", amount:5,}]},
         ],
         //TIER 4
         IV:[
-            {name:"rugged leather", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[
+            {name:"rugged leather", extraInfo:{progress:836,quality:418,durability:40}, rarities:["common", "uncommon","rare","epic","legendary"], requirements:[
                 {type:"skinning", tier: "IV", name:"rugged hide", amount:4, raw: true},
                 {type:"leatherworking", tier: "IV", name:"aged tannin", amount:1, raw: true},
                 {type:"leatherworking", tier: "III", name:"heavy leather", amount:1,}]},
-            {name:"rugged leather boots", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"leatherworking", tier: "IV", name:"rugged leather", amount:3,}]},
-            {name:"rugged leather belt", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"leatherworking", tier: "IV", name:"rugged leather", amount:3,}]},
-            {name:"rugged leather gloves", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"leatherworking", tier: "IV", name:"rugged leather", amount:3,}]},
-            {name:"rugged leather cap", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"leatherworking", tier: "IV", name:"rugged leather", amount:4,}]},
-            {name:"rugged leather apron", rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"leatherworking", tier: "IV", name:"rugged leather", amount:5,}]},
+            {name:"rugged leather boots", extraInfo:{progress:2620,quality:1310,durability:60}, rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"leatherworking", tier: "IV", name:"rugged leather", amount:3,}]},
+            {name:"rugged leather belt", extraInfo:{progress:2850,quality:1424,durability:60}, rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"leatherworking", tier: "IV", name:"rugged leather", amount:3,}]},
+            {name:"rugged leather gloves", extraInfo:{progress:3090,quality:1544,durability:60}, rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"leatherworking", tier: "IV", name:"rugged leather", amount:3,}]},
+            {name:"rugged leather cap", extraInfo:{progress:4454,quality:2226,durability:70}, rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"leatherworking", tier: "IV", name:"rugged leather", amount:4,}]},
+            {name:"rugged leather apron", extraInfo:{progress:6000,quality:3000,durability:70}, rarities:["common", "uncommon","rare","epic","legendary"], requirements:[{type:"leatherworking", tier: "IV", name:"rugged leather", amount:5,}]},
         ]
     },
     blacksmithing:{
