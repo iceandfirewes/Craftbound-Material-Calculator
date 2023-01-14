@@ -1,5 +1,6 @@
 import  {rarityColor, crafts, craftSearch, searchRawMaterials} from "./assets/Crafts.js"
 import { useState } from "react"
+import { motion } from "framer-motion"
 export default function Calculator()
 {
     //console.log(testRecursiveCraftBlueprint("leatherworking","coarse leather boots",false))
@@ -7,7 +8,7 @@ export default function Calculator()
       const tempCraftOption = localStorage.getItem("craftOption")
       return tempCraftOption ? JSON.parse(tempCraftOption) : {type:"leatherworking", tier:"I", name:"coarse leather", amount:1}
     })
-    const [setting, setSetting] = useState({hovered: false})
+    const [setting, setSetting] = useState({hovered:false, mode:"simple"})
     //main function to handle user input
     return <>
       {createOptionDiv()}
@@ -64,6 +65,19 @@ export default function Calculator()
     function createOptionDiv()
     {
       return <div className="calculator--option">
+      {/* <div className="switch" mode={setting.mode} onClick={handleSettingChange("mode", setting.mode == "simple" ? "detail" : "simple")}> */}
+      <div className="option--mode">
+        Simple
+        <div className="modeSwitch" mode={setting.mode} 
+          onClick={() => handleSettingChange("mode", setting.mode == "simple" ? "detail" : "simple")}
+          style={{justifyContent: setting.mode == "simple"? "flex-start" : "flex-end"}}>
+          <motion.div className="modeSwitch--button" layout transition={{
+            type: "spring",
+            stiffness: 700,
+            damping: 30}}/>
+        </div>
+        Detail
+      </div>
       <select name="type" onChange={(event) => handleCraftOptionChange(event)} value={craftOption.type}>
         {Object.getOwnPropertyNames(crafts).map(profession => <option value={profession}>{capitalizeEveryWord(profession)}</option>)}
       </select>
@@ -133,7 +147,7 @@ export default function Calculator()
         let material = craftSearch(type, tier, name)
         //
         let extraInfo = undefined
-        if (setting.hovered && material.hasOwnProperty("extraInfo"))
+        if (setting.mode == "detail" && setting.hovered && material.hasOwnProperty("extraInfo"))
         {
           extraInfo = material.extraInfo
           extraInfo = <div className="ingredient--PQD">

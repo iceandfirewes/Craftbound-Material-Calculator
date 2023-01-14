@@ -26,6 +26,29 @@ text-align: center;
   justify-content: center;
   gap: .5em;
 }
+.option--amount {
+  width: 4em;
+}
+.option--mode {
+  display: flex;
+  align-items: center;
+}
+.modeSwitch {
+  width: 2em;
+  height: 1em;
+  background-color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 2em;
+  /* padding: 10px; */
+  cursor: pointer;
+}
+.modeSwitch--button {
+  width: 1em;
+  height: 1em;
+  background-color: white;
+  border-radius: 2em;
+}
 .calculator--display {
   position:absolute;
   left:50%;
@@ -35,9 +58,6 @@ text-align: center;
   align-items: center;
   display: flex;
   flex-direction: column;
-}
-.option--amount {
-  width: 4em;
 }
 .steps {
   display: flex;
