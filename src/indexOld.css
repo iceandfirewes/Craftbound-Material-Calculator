@@ -3,34 +3,37 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
+
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
 * {
   margin: 0;
 }
-
+.App > h1 {
+text-align: center;
+}
 .calculator--option {
   margin-top: 1em;
   display: flex;
   justify-content: center;
-  gap: 0.5em;
+  gap: .5em;
 }
-.calculator--option .option--amount {
+.option--amount {
   width: 4em;
 }
-.calculator--option .option--mode {
+.option--mode {
   display: flex;
   align-items: center;
 }
-.calculator--option .option--mode .mode--switch {
+.mode--switch {
   width: 2em;
   height: 1em;
   background-color: rgba(255, 255, 255, 0.4);
@@ -40,67 +43,65 @@
   /* padding: 10px; */
   cursor: pointer;
 }
-.calculator--option .option--mode .mode--switch .switch--button {
+.switch--button {
   width: 1em;
   height: 1em;
   background-color: white;
   border-radius: 2em;
 }
 .calculator--display {
-  position: absolute;
-  left: 50%;
+  position:absolute;
+  left:50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%,-50%);
   width: 100%;
   align-items: center;
   display: flex;
   flex-direction: column;
 }
-.calculator--display .steps {
+.steps {
   display: flex;
   gap: 1em;
 }
-.calculator--display .steps .steps--arrow {
-  margin-top: 0.3em;
+.steps--arrow {
+  margin-top: .3em;
   border: solid white;
-  border-width: 0 0.2em 0.2em 0;
-  width: 0.4em;
-  height: 0.4em;
+  border-width: 0 .2em .2em 0;
+  width: .4em;
+  height: .4em;
   transform: rotate(-45deg);
 }
-
 .ingredient {
   display: flex;
   flex-direction: column;
 }
-.ingredient .ingredient--NAR {
+.ingredient--NAR {
   display: flex;
 }
-.ingredient .ingredient--NAR .NAR--arrow {
-  margin-top: 0.6em;
-  border: solid white;
-  border-width: 0 0.2em 0.2em 0;
-  width: 0.2em;
-  height: 0.2em;
-  transform: rotate(-135deg);
-}
-.ingredient .ingredient--NAR .NAR--rarity {
-  margin-top: 0.5em;
-  width: 0.5em;
-  height: 0.5em;
-  border-radius: 50%;
-}
-.ingredient .ingredient--PQD {
+.ingredient--PQD {
   display: flex;
   gap: 1em;
 }
-.ingredient .ingredients--amount {
-  margin-left: 0.3em;
-  margin-right: 0.3em;
+.ingredients--amount {
+  margin-left: .3em;
+  margin-right: .3em;
 }
-
+.NAR--arrow {
+  margin-top: .6em;
+  border: solid white;
+  border-width: 0 .2em .2em 0;
+  width: .2em;
+  height: .2em;
+  transform: rotate(-135deg); 
+}
+.NAR--rarity {
+  margin-top: .5em;
+  width: .5em;
+  height: .5em;
+  border-radius: 50%;
+}
 .update {
   position: absolute;
   left: 0%;
   bottom: 0%;
-}/*# sourceMappingURL=index.css.map */
+}

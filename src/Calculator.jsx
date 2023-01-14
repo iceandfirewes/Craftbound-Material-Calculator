@@ -10,13 +10,12 @@ export default function Calculator()
     })
     const [setting, setSetting] = useState({hovered:false, mode:"simple"})
     //main function to handle user input
-    return <>
-      {createOptionDiv()}
+    return <div className="calculator">
+      <div className="calculator--option">{createOptionDiv()}</div>
       <div className="calculator--display">
         {createCraftBluePrint(craftOption.type, craftOption.tier, craftOption.name, craftOption.amount, false, undefined, true)}
       </div>
-      
-    </>
+    </div>
     function handleCraftOptionChange(event)
     {
       setcraftOption(oldCraftOption => {
@@ -64,14 +63,14 @@ export default function Calculator()
     }
     function createOptionDiv()
     {
-      return <div className="calculator--option">
+      return <>
       {/* <div className="switch" mode={setting.mode} onClick={handleSettingChange("mode", setting.mode == "simple" ? "detail" : "simple")}> */}
       <div className="option--mode">
         Simple
-        <div className="modeSwitch" mode={setting.mode} 
+        <div className="mode--switch" mode={setting.mode} 
           onClick={() => handleSettingChange("mode", setting.mode == "simple" ? "detail" : "simple")}
           style={{justifyContent: setting.mode == "simple"? "flex-start" : "flex-end"}}>
-          <motion.div className="modeSwitch--button" layout transition={{
+          <motion.div className="switch--button" layout transition={{
             type: "spring",
             stiffness: 700,
             damping: 30}}/>
@@ -88,7 +87,7 @@ export default function Calculator()
       <select name="name" onChange={(event) => handleCraftOptionChange(event)} value={craftOption.name}>
         {crafts[craftOption.type][craftOption.tier].map(craft => (craft.hasOwnProperty("requirements") ? <option value={craft.name}>{capitalizeEveryWord(craft.name)}</option> : undefined))}
       </select>
-    </div>
+    </>
     }
     function createIngredientDiv(material, amount, raritiesRequest, firstFlag) {
       /**decide which rarity to use. the item ornate rarity or the request rarity from a parent craft
@@ -100,14 +99,14 @@ export default function Calculator()
       {
         const [, ...raritiesRequestExceptFirst] = raritiesRequest
         raritiesDisplay = <>
-          <span className="rarityRequestArrow" style={{borderColor:rarityColor[raritiesRequest[0]]}}></span>
-          {raritiesRequestExceptFirst.map(rarity => (<span className="rarity" style={{backgroundColor: rarityColor[rarity]}}/>))}
+          <span className="NAR--arrow" style={{borderColor:rarityColor[raritiesRequest[0]]}}></span>
+          {raritiesRequestExceptFirst.map(rarity => (<span className="NAR--rarity" style={{backgroundColor: rarityColor[rarity]}}/>))}
         </>
       }
       else
       {
         raritiesDisplay = <>
-          {material.rarities.map(rarity => (<span className="rarity" style={{backgroundColor: rarityColor[rarity]}}/>))}  
+          {material.rarities.map(rarity => (<span className="NAR--rarity" style={{backgroundColor: rarityColor[rarity]}}/>))}  
         </>
       }
       // style={firstFlag ? undefined : {border: "solid", borderWidth: "0 0 0 .2em"}}
@@ -140,7 +139,7 @@ export default function Calculator()
       {
         //console.log(type, name)
         const material = searchRawMaterials(type, name)
-        return createIngredientDiv(material, amount, raritiesRequest)
+        return <div className="ingredient">{createIngredientDiv(material, amount, raritiesRequest)}</div>
       }
       else{
         //console.log(type, tier, name)
@@ -163,7 +162,7 @@ export default function Calculator()
             {createIngredientDiv(material, amount, raritiesRequest, firstFlag)}
             {extraInfo}
           </div>
-          <span className="stepsFlowArrow"></span>
+          <span className="steps--arrow"></span>
           <div>{child}</div>
         </div>
       }
