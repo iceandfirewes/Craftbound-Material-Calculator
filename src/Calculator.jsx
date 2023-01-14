@@ -14,7 +14,7 @@ export default function Calculator()
     return <>
       {createOptionDiv()}
       <div className="calculator--display">
-        {createCraftBluePrint(craftOption.type, craftOption.tier, craftOption.name, craftOption.amount, false)}
+        {createCraftBluePrint(craftOption.type, craftOption.tier, craftOption.name, craftOption.amount, false, undefined, true)}
       </div>
       <div className="update">1/12 - display PQD for every prof except JW</div>
     </>
@@ -73,7 +73,7 @@ export default function Calculator()
       </select>
     </div>
     }
-    function createIngredientDiv(material, amount, raritiesRequest) {
+    function createIngredientDiv(material, amount, raritiesRequest, firstFlag) {
       /**decide which rarity to use. the item ornate rarity or the request rarity from a parent craft
        *  + if there's no rarityRequest do the circle as usual
        *  + if there is, need to display an arrow with the circle excluding the first circle
@@ -93,7 +93,9 @@ export default function Calculator()
           {material.rarities.map(rarity => (<span className="rarity" style={{backgroundColor: rarityColor[rarity]}}/>))}  
         </>
       }
-      return <div className="ingredient--NAR">
+      // style={firstFlag ? undefined : {border: "solid", borderWidth: "0 0 0 .2em"}}
+      // If the div is the first, ie, the leftmost craft in the tree. then dont display the border, else display it
+      return <div className="ingredient--NAR" style={firstFlag ? undefined : {border: "solid", borderWidth: "0 0 0 .1em"}}>
         {/*material color to name to amount*/}
         <div>{capitalizeEveryWord(material.name)}</div>
         <div className="ingredients--amount">x{amount}</div>
@@ -107,9 +109,13 @@ export default function Calculator()
      * raritiesRequest is for craft that want to override a material rarity. for example, if an item is uncommon -> legendary but 
      * the craft only want rare -> legendary
      *  default to undefined. most craft does not have a rarities field in their requirement object aside from jw
-    *   if passed down to createIngrediantDiv, it will either be undefined OR ["common","uncommon",...]
+     *  if passed down to createIngrediantDiv, it will either be undefined OR ["common","uncommon",...]
+     * firstFlag is when if called from the mainPage, a true value will be passed so when the createIngredientDiv is runned, it will not
+     *  render a border. Notice how {createIngredientDiv(material, amount, raritiesRequest, firstFlag)} is the only line that pass
+     *  along the true firstFlag, it will render the left most blueprint and then not pass a value down to it childs, defaulting to false
+     *  and thus, all the blueprint aside from the first will have a border
   * */
-    function createCraftBluePrint(type, tier, name, amount, rawFlag = false, raritiesRequest = undefined)
+    function createCraftBluePrint(type, tier, name, amount, rawFlag = false, raritiesRequest = undefined, firstFlag = false)
     {
       //in the event that the name is a raw material. the tier is not needed but it is in the requirements anyway
       //may need to add tier to raw material but i dont think that nessessary
@@ -137,10 +143,10 @@ export default function Calculator()
         const child = material.requirements.map(requirement => createCraftBluePrint(requirement.type, requirement.tier, requirement.name, amount * requirement.amount, requirement.raw, requirement.rarities))
         return <div className='steps' onMouseOver={() => {setIsHovered(true)}} onMouseOut={() => {setIsHovered(false)}}>
           <div className="ingredient" >
-          {/* <div className="ingredient" onMouseOver={() => {setIsHovered(false)}} onMouseOut={() => {setIsHovered(true)}}> */}
-            {createIngredientDiv(material, amount, raritiesRequest)}
+            {createIngredientDiv(material, amount, raritiesRequest, firstFlag)}
             {extraInfo}
           </div>
+          <span className="stepsFlowArrow"></span>
           <div>{child}</div>
         </div>
       }
