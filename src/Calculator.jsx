@@ -7,9 +7,7 @@ export default function Calculator()
       const tempCraftOption = localStorage.getItem("craftOption")
       return tempCraftOption ? JSON.parse(tempCraftOption) : {type:"leatherworking", tier:"I", name:"coarse leather", amount:1}
     })
-    // debug 
-    // const [isHovered, setIsHovered] = useState(true)
-    const [isHovered, setIsHovered] = useState(false)
+    const [setting, setSetting] = useState({hovered: false})
     //main function to handle user input
     return <>
       {createOptionDiv()}
@@ -18,7 +16,7 @@ export default function Calculator()
       </div>
       
     </>
-    function handleOptionChange(event)
+    function handleCraftOptionChange(event)
     {
       setcraftOption(oldCraftOption => {
         const newCraftOption = {
@@ -58,17 +56,22 @@ export default function Calculator()
         return newCraftOption
       })
     }
+    function handleSettingChange(name, value)
+    {
+      setSetting(old => 
+        ({...old, [name]:value}))
+    }
     function createOptionDiv()
     {
       return <div className="calculator--option">
-      <select name="type" onChange={(event) => handleOptionChange(event)} value={craftOption.type}>
+      <select name="type" onChange={(event) => handleCraftOptionChange(event)} value={craftOption.type}>
         {Object.getOwnPropertyNames(crafts).map(profession => <option value={profession}>{capitalizeEveryWord(profession)}</option>)}
       </select>
-      <select name="tier" onChange={(event) => handleOptionChange(event)} value={craftOption.tier}>
+      <select name="tier" onChange={(event) => handleCraftOptionChange(event)} value={craftOption.tier}>
         {Object.getOwnPropertyNames(crafts[craftOption.type]).map(tier => <option value={tier}>{tier}</option>)}
       </select>
-      <input name="amount" className="option--amount" type="text" value={craftOption.amount} onChange={(event) => handleOptionChange(event)}></input>
-      <select name="name" onChange={(event) => handleOptionChange(event)} value={craftOption.name}>
+      <input name="amount" className="option--amount" type="text" value={craftOption.amount} onChange={(event) => handleCraftOptionChange(event)}></input>
+      <select name="name" onChange={(event) => handleCraftOptionChange(event)} value={craftOption.name}>
         {crafts[craftOption.type][craftOption.tier].map(craft => (craft.hasOwnProperty("requirements") ? <option value={craft.name}>{capitalizeEveryWord(craft.name)}</option> : undefined))}
       </select>
     </div>
@@ -130,7 +133,7 @@ export default function Calculator()
         let material = craftSearch(type, tier, name)
         //
         let extraInfo = undefined
-        if (isHovered && material.hasOwnProperty("extraInfo"))
+        if (setting.hovered && material.hasOwnProperty("extraInfo"))
         {
           extraInfo = material.extraInfo
           extraInfo = <div className="ingredient--PQD">
@@ -141,8 +144,8 @@ export default function Calculator()
         }
         //
         const child = material.requirements.map(requirement => createCraftBluePrint(requirement.type, requirement.tier, requirement.name, amount * requirement.amount, requirement.raw, requirement.rarities))
-        return <div className='steps' onMouseOver={() => {setIsHovered(true)}} onMouseOut={() => {setIsHovered(false)}}>
-          <div className="ingredient" >
+        return <div className='steps' onMouseOver={() => {handleSettingChange("hovered", true)}} onMouseOut={() => {handleSettingChange("hovered", false)}}>
+          <div className="ingredient">
             {createIngredientDiv(material, amount, raritiesRequest, firstFlag)}
             {extraInfo}
           </div>
