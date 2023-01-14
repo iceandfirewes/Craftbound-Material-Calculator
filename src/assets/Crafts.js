@@ -410,7 +410,7 @@ export const crafts = {
                 {type:"woodworking", tier: "I", name: "beech lumber", amount:7,}]},
         ],
         II:[
-            {name:"iron nut", rarities:["common","uncommon","rare"], requirements:[
+            {name:"iron nut", extraInfo:{progress:260,quality:130,durability:40}, rarities:["common","uncommon","rare"], requirements:[
                 {type:"blacksmithing", tier: "II", name: "iron ingot", amount:1}]},
             {name:"iron harvesting sickle", extraInfo:{progress:3360,quality:1640,durability:80}, rarities:["common","uncommon","rare"], requirements:[
                 {type:"leatherworking", tier: "II", name: "light leather", amount:7},
@@ -459,7 +459,7 @@ export const crafts = {
                 {type:"woodworking", tier: "II", name: "pine lumber", amount:7,}]},
         ],
         III:[
-            {name:"steel nut", rarities:["common","uncommon","rare","epic"], requirements:[
+            {name:"steel nut", extraInfo:{progress:508,quality:254,durability:40}, rarities:["common","uncommon","rare","epic"], requirements:[
                 {type:"blacksmithing", tier: "III", name: "steel ingot", amount:1}]},
             {name:"steel harvesting sickle", extraInfo:{progress:5600,quality:2800,durability:80}, rarities:["common","uncommon","rare","epic"], requirements:[
                 {type:"leatherworking", tier: "III", name: "heavy leather", amount:7},
@@ -508,7 +508,7 @@ export const crafts = {
                 {type:"woodworking", tier: "III", name: "oak lumber", amount:7,}]},
         ],
         IV:[
-            {name:"silver nut", rarities:["common","uncommon","rare","epic","legendary"], requirements:[
+            {name:"silver nut", extraInfo:{progress:836,quality:418,durability:40}, rarities:["common","uncommon","rare","epic","legendary"], requirements:[
                 {type:"blacksmithing", tier: "IV", name: "silver ingot", amount:1}]},
             {name:"silver harvesting sickle", extraInfo:{progress:8400,quality:4200,durability:80}, rarities:["common","uncommon","rare","epic","legendary"], requirements:[
                 {type:"leatherworking", tier: "IV", name: "rugged leather", amount:7},
