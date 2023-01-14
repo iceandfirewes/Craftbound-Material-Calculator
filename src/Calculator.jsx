@@ -16,7 +16,7 @@ export default function Calculator()
       <div className="calculator--display">
         {createCraftBluePrint(craftOption.type, craftOption.tier, craftOption.name, craftOption.amount, false, undefined, true)}
       </div>
-      <div className="update">1/12 - display PQD for every prof except JW</div>
+      
     </>
     function handleOptionChange(event)
     {
