@@ -100,24 +100,25 @@ export default function Calculator()
       {
         const [, ...raritiesRequestExceptFirst] = raritiesRequest
         raritiesDisplay = <>
+          {/* this to add another chevron here bc motion.span rotate it  */}
           <span className="NAR--arrow" style={{borderColor:rarityColor[raritiesRequest[0]]}}></span>
-          {raritiesRequestExceptFirst.map(rarity => (<span className="NAR--rarity" style={{backgroundColor: rarityColor[rarity]}}/>))}
+          {raritiesRequestExceptFirst.map(rarity => (<motion.span layout className="NAR--rarity" style={{backgroundColor: rarityColor[rarity]}}/>))}
         </>
       }
       else
       {
         raritiesDisplay = <>
-          {material.rarities.map(rarity => (<span className="NAR--rarity" style={{backgroundColor: rarityColor[rarity]}}/>))}  
+          {material.rarities.map(rarity => (<motion.span layout className="NAR--rarity" style={{backgroundColor: rarityColor[rarity]}}/>))}  
         </>
       }
       // style={firstFlag ? undefined : {border: "solid", borderWidth: "0 0 0 .2em"}}
       // If the div is the first, ie, the leftmost craft in the tree. then dont display the border, else display it
-      return <div className="ingredient--NAR" style={firstFlag ? undefined : {border: "solid", borderWidth: "0 0 0 .1em"}}>
+      return <motion.div layout className="ingredient--NAR" style={firstFlag ? undefined : {border: "solid", borderWidth: "0 0 0 .1em"}}>
         {/*material color to name to amount*/}
         <motion.div layout>{capitalizeEveryWord(material.name)}</motion.div>
-        <div className="ingredients--amount">x{amount}</div>
+        <motion.div layout className="ingredients--amount">x{amount}</motion.div>
         {raritiesDisplay}
-      </div>
+      </motion.div>
     }    
     /**recursive blueprint generator
      * rawFlag
@@ -140,7 +141,7 @@ export default function Calculator()
       {
         //console.log(type, name)
         const material = searchRawMaterials(type, name)
-        return <motion.div className="ingredient" layout>{createIngredientDiv(material, amount, raritiesRequest)}</motion.div>
+        return <div className="ingredient">{createIngredientDiv(material, amount, raritiesRequest)}</div>
       }
       else{
         //console.log(type, tier, name)
@@ -150,19 +151,19 @@ export default function Calculator()
         if (setting.mode == "detail" && setting.hovered && material.hasOwnProperty("extraInfo"))
         {
           extraInfo = material.extraInfo
-          extraInfo = <div className="ingredient--PQD">
+          extraInfo = <motion.div layout className="ingredient--PQD">
             <span>P:{extraInfo.progress}</span>
             <span>Q:{extraInfo.quality}</span>
             <span>D:{extraInfo.durability}</span>
-          </div>
+          </motion.div>
         }
         //
         const child = material.requirements.map(requirement => createCraftBluePrint(requirement.type, requirement.tier, requirement.name, amount * requirement.amount, requirement.raw, requirement.rarities))
         return <div className='steps' onMouseOver={() => {handleSettingChange("hovered", true)}} onMouseOut={() => {handleSettingChange("hovered", false)}}>
-          <motion.div className="ingredient" layout>
+          <div className="ingredient">
             {createIngredientDiv(material, amount, raritiesRequest, firstFlag)}
             {extraInfo}
-          </motion.div>
+          </div>
           <motion.img layout src={stepsArrow} className="steps--arrow"></motion.img>
           {/* legacy css arrow
           <span className="steps--arrow"></span> */}
