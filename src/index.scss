@@ -1,7 +1,7 @@
 :root 
 {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 1em;
   line-height: 24px;
   font-weight: 400;
 
@@ -64,43 +64,46 @@
       display: flex;
       gap: 1em;
       .steps--arrow {
-        margin-top: .3em;
-        border: solid white;
-        border-width: 0 .2em .2em 0;
-        width: .4em;
-        height: .4em;
-        transform: rotate(-45deg);
+        //legacy css arrow
+        // margin-top: .3em;
+        // border: solid white;
+        // border-width: 0 .2em .2em 0;
+        // width: .4em;
+        // height: .4em;
+        // transform: rotate(-45deg);
+        height: 1.2em;
+      }
+      //throw this outside of there's an issue
+      .ingredient {
+        display: flex;
+        flex-direction: column;
+        .ingredient--NAR {
+          display: flex;
+          .NAR--arrow {
+            margin-top: .6em;
+            border: solid white;
+            border-width: 0 .2em .2em 0;
+            width: .2em;
+            height: .2em;
+            transform: rotate(-135deg); 
+          }
+          .NAR--rarity {
+            margin-top: .5em;
+            width: .5em;
+            height: .5em;
+            border-radius: 50%;
+          }
+        }
+        .ingredient--PQD {
+          display: flex;
+          gap: 1em;
+        }
+        .ingredients--amount {
+          margin-left: .3em;
+          margin-right: .3em;
+        }
       }
     }
-  }
-}
-.ingredient {
-  display: flex;
-  flex-direction: column;
-  .ingredient--NAR {
-    display: flex;
-    .NAR--arrow {
-      margin-top: .6em;
-      border: solid white;
-      border-width: 0 .2em .2em 0;
-      width: .2em;
-      height: .2em;
-      transform: rotate(-135deg); 
-    }
-    .NAR--rarity {
-      margin-top: .5em;
-      width: .5em;
-      height: .5em;
-      border-radius: 50%;
-    }
-  }
-  .ingredient--PQD {
-    display: flex;
-    gap: 1em;
-  }
-  .ingredients--amount {
-    margin-left: .3em;
-    margin-right: .3em;
   }
 }
 .update {

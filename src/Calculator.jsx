@@ -1,4 +1,5 @@
 import  {rarityColor, crafts, craftSearch, searchRawMaterials} from "./assets/Crafts.js"
+import stepsArrow from "./images/chevron-right.png"
 import { useState } from "react"
 import { motion } from "framer-motion"
 export default function Calculator()
@@ -113,7 +114,7 @@ export default function Calculator()
       // If the div is the first, ie, the leftmost craft in the tree. then dont display the border, else display it
       return <div className="ingredient--NAR" style={firstFlag ? undefined : {border: "solid", borderWidth: "0 0 0 .1em"}}>
         {/*material color to name to amount*/}
-        <div>{capitalizeEveryWord(material.name)}</div>
+        <motion.div layout>{capitalizeEveryWord(material.name)}</motion.div>
         <div className="ingredients--amount">x{amount}</div>
         {raritiesDisplay}
       </div>
@@ -139,7 +140,7 @@ export default function Calculator()
       {
         //console.log(type, name)
         const material = searchRawMaterials(type, name)
-        return <div className="ingredient">{createIngredientDiv(material, amount, raritiesRequest)}</div>
+        return <motion.div className="ingredient" layout>{createIngredientDiv(material, amount, raritiesRequest)}</motion.div>
       }
       else{
         //console.log(type, tier, name)
@@ -158,11 +159,13 @@ export default function Calculator()
         //
         const child = material.requirements.map(requirement => createCraftBluePrint(requirement.type, requirement.tier, requirement.name, amount * requirement.amount, requirement.raw, requirement.rarities))
         return <div className='steps' onMouseOver={() => {handleSettingChange("hovered", true)}} onMouseOut={() => {handleSettingChange("hovered", false)}}>
-          <div className="ingredient">
+          <motion.div className="ingredient" layout>
             {createIngredientDiv(material, amount, raritiesRequest, firstFlag)}
             {extraInfo}
-          </div>
-          <span className="steps--arrow"></span>
+          </motion.div>
+          <motion.img layout src={stepsArrow} className="steps--arrow"></motion.img>
+          {/* legacy css arrow
+          <span className="steps--arrow"></span> */}
           <div>{child}</div>
         </div>
       }
