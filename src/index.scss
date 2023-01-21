@@ -22,6 +22,11 @@
   text-align: center;
 }
 .calculator {
+  &--reset{
+    position: absolute;
+    left: 0%;
+    top: 0%;
+  }
   &--option {
     margin-top: 1em;
     display: flex;

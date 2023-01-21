@@ -12,6 +12,7 @@ export default function Calculator()
     const [setting, setSetting] = useState({hovered:false, mode:"simple"})
     //main function to handle user input
     return <div className="calculator">
+      <button className="calculator--reset" onClick={() => setcraftOption({type:"leatherworking", tier:"I", name:"coarse leather", amount:1})}>RESET</button>
       <div className="calculator--option">{createOptionDiv()}</div>
       <div className="calculator--display">
         {createCraftBluePrint(craftOption.type, craftOption.tier, craftOption.name, craftOption.amount, false, undefined, true)}

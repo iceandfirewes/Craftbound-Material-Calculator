@@ -21,6 +21,11 @@
   text-align: center;
 }
 
+.calculator--reset {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+}
 .calculator--option {
   margin-top: 1em;
   display: flex;
