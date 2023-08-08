@@ -66,7 +66,6 @@ export default function Calculator()
     function createOptionDiv()
     {
       return <>
-      {/* <div className="switch" mode={setting.mode} onClick={handleSettingChange("mode", setting.mode == "simple" ? "detail" : "simple")}> */}
       <div className="option--mode">
         Simple
         <div className="mode--switch" mode={setting.mode} 
@@ -101,7 +100,7 @@ export default function Calculator()
       {
         const [, ...raritiesRequestExceptFirst] = raritiesRequest
         raritiesDisplay = <>
-          {/* this to add another chevron here bc motion.span rotate it  */}
+          {/* this is to add a upward pointing arrow, indicating a rarity upgrade  */}
           <span className="NAR--arrow" style={{borderColor:rarityColor[raritiesRequest[0]]}}></span>
           {raritiesRequestExceptFirst.map(rarity => (<motion.span layout className="NAR--rarity" style={{backgroundColor: rarityColor[rarity]}}/>))}
         </>
